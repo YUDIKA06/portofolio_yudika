@@ -41,15 +41,15 @@
 <body class="antialiased selection:bg-orange-200 selection:text-orange-900">
 
     <!-- MODAL / LIGHTBOX (Wadah untuk menampilkan gambar full) -->
-    <div id="imageModal" class="fixed inset-0 z-[100] bg-black/90 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300" onclick="closeModal()">
+    <div id="imageModal" class="fixed inset-0 z-[100] bg-black/95 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300" onclick="closeModal()">
         <!-- Tombol Close -->
-        <button class="absolute top-6 right-6 text-white text-5xl font-bold hover:text-gray-300 z-[101] focus:outline-none" onclick="closeModal()">&times;</button>
+        <button class="fixed top-4 right-4 md:top-8 md:right-8 text-white text-6xl font-bold hover:text-orange-500 z-[101] focus:outline-none drop-shadow-lg transition-colors" onclick="closeModal()">&times;</button>
         
         <!-- Gambar Full -->
-        <img id="modalImage" src="" alt="Full View" class="max-h-[90vh] max-w-[95vw] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
+        <img id="modalImage" src="" alt="Full View" class="max-h-[85vh] max-w-[95vw] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
         
         <!-- Hint Text -->
-        <p class="absolute bottom-6 text-white/70 text-sm">Klik di luar gambar untuk menutup</p>
+        <p class="absolute bottom-8 text-white/70 text-sm bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">Klik di luar gambar untuk menutup</p>
     </div>
 
     <!-- Script Javascript untuk Modal -->
@@ -61,14 +61,11 @@
             modalImg.src = imageSrc;
             modal.classList.remove('hidden');
             
-            // Sedikit delay agar animasi fade-in berjalan mulus
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 modalImg.classList.remove('scale-95');
                 modalImg.classList.add('scale-100');
             }, 10);
-            
-            document.body.style.overflow = 'hidden'; // Mencegah scroll saat modal terbuka
         }
 
         function closeModal() {
@@ -79,13 +76,10 @@
             modalImg.classList.remove('scale-100');
             modalImg.classList.add('scale-95');
             
-            // Tunggu animasi selesai baru sembunyikan element
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modalImg.src = ''; 
             }, 300);
-            
-            document.body.style.overflow = 'auto'; // Mengaktifkan scroll kembali
         }
     </script>
 
@@ -154,7 +148,6 @@
                 <!-- Kanan: Visual Mockup FULL FEED -->
                 <div class="flex justify-center bg-gray-50 p-8 rounded-3xl border border-gray-100">
                     <div class="phone-mockup w-72 shadow-2xl transition hover:scale-[1.02] duration-300">
-                        <!-- Added onClick -->
                         <img src="puro-feed.jpg" loading="lazy" alt="Instagram Feed Puro" class="w-full h-auto cursor-pointer" onclick="openModal(this.src)">
                     </div>
                 </div>
@@ -372,8 +365,9 @@
             <p class="text-gray-400 text-xl mb-12">
                 Tertarik bekerja sama untuk manajemen sosial media atau desain poster?
             </p>
-            <a href="mailto:emailmu@gmail.com" class="inline-block bg-white text-black font-bold text-lg px-10 py-4 rounded-full hover:bg-orange-500 hover:text-white transition duration-300 transform hover:-translate-y-1">
-                Hubungi Saya
+            <!-- BUTTON WA DIBAWAH INI YANG DIPERBARUI -->
+            <a href="https://wa.me/6288994372264" target="_blank" class="inline-flex items-center bg-white text-black font-bold text-lg px-10 py-4 rounded-full hover:bg-green-500 hover:text-white transition duration-300 transform hover:-translate-y-1">
+                <i class="fa-brands fa-whatsapp mr-3 text-2xl"></i> Hubungi Saya
             </a>
             
             <div class="mt-20 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
