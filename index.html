@@ -40,27 +40,19 @@
 </head>
 <body class="antialiased selection:bg-orange-200 selection:text-orange-900">
 
-    <!-- MODAL / LIGHTBOX (Wadah untuk menampilkan gambar full) -->
+    <!-- MODAL / LIGHTBOX -->
     <div id="imageModal" class="fixed inset-0 z-[100] bg-black/95 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300" onclick="closeModal()">
-        <!-- Tombol Close -->
         <button class="fixed top-4 right-4 md:top-8 md:right-8 text-white text-6xl font-bold hover:text-orange-500 z-[101] focus:outline-none drop-shadow-lg transition-colors" onclick="closeModal()">&times;</button>
-        
-        <!-- Gambar Full -->
         <img id="modalImage" src="" alt="Full View" class="max-h-[85vh] max-w-[95vw] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
-        
-        <!-- Hint Text -->
         <p class="absolute bottom-8 text-white/70 text-sm bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">Klik di luar gambar untuk menutup</p>
     </div>
 
-    <!-- Script Javascript untuk Modal -->
     <script>
         function openModal(imageSrc) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
-            
             modalImg.src = imageSrc;
             modal.classList.remove('hidden');
-            
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 modalImg.classList.remove('scale-95');
@@ -71,11 +63,9 @@
         function closeModal() {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
-
             modal.classList.add('opacity-0');
             modalImg.classList.remove('scale-100');
             modalImg.classList.add('scale-95');
-            
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modalImg.src = ''; 
@@ -161,36 +151,17 @@
                 </div>
                 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <!-- Poster 1 -->
                     <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-gray-200">
                         <img src="campaign1.png" loading="lazy" alt="Poster Campaign 1" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 cursor-pointer" onclick="openModal(this.src)">
-                        <div class="pointer-events-none absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                            <span class="text-white font-bold text-sm tracking-widest border border-white px-3 py-1"><i class="fa-solid fa-expand mr-2"></i>ZOOM</span>
-                        </div>
                     </div>
-
-                    <!-- Poster 2 -->
                     <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-gray-200">
                         <img src="campaign2.png" loading="lazy" alt="Poster Campaign 2" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 cursor-pointer" onclick="openModal(this.src)">
-                        <div class="pointer-events-none absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                            <span class="text-white font-bold text-sm tracking-widest border border-white px-3 py-1"><i class="fa-solid fa-expand mr-2"></i>ZOOM</span>
-                        </div>
                     </div>
-
-                    <!-- Poster 3 -->
                     <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-gray-200">
                         <img src="campaign3.png" loading="lazy" alt="Poster Campaign 3" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 cursor-pointer" onclick="openModal(this.src)">
-                        <div class="pointer-events-none absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                            <span class="text-white font-bold text-sm tracking-widest border border-white px-3 py-1"><i class="fa-solid fa-expand mr-2"></i>ZOOM</span>
-                        </div>
                     </div>
-
-                    <!-- Poster 4 -->
                     <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-gray-200">
                         <img src="campaign4.png" loading="lazy" alt="Poster Campaign 4" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 cursor-pointer" onclick="openModal(this.src)">
-                        <div class="pointer-events-none absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                            <span class="text-white font-bold text-sm tracking-widest border border-white px-3 py-1"><i class="fa-solid fa-expand mr-2"></i>ZOOM</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -211,8 +182,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Card 1: Porsche -->
+                <!-- Card 1 -->
                 <div class="project-card group cursor-pointer" onclick="openModal('porsche.png')">
                     <div class="overflow-hidden rounded-2xl shadow-lg aspect-[4/5] bg-gray-200">
                         <img src="porsche.png" loading="lazy" alt="Porsche 911 Poster" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -222,8 +192,7 @@
                         <p class="text-sm text-gray-500">Automotive Layout Design</p>
                     </div>
                 </div>
-
-                <!-- Card 2: Lando Norris F1 -->
+                <!-- Card 2 -->
                 <div class="project-card group cursor-pointer" onclick="openModal('lando.png')">
                     <div class="overflow-hidden rounded-2xl shadow-lg aspect-[4/5] bg-gray-200">
                         <img src="lando.png" loading="lazy" alt="Lando Norris F1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -233,8 +202,7 @@
                         <p class="text-sm text-gray-500">Sports Typography & Texture</p>
                     </div>
                 </div>
-
-                <!-- Card 3: Jaguar -->
+                <!-- Card 3 -->
                 <div class="project-card group cursor-pointer" onclick="openModal('jaguar.png')">
                     <div class="overflow-hidden rounded-2xl shadow-lg aspect-[4/5] bg-gray-200">
                         <img src="jaguar.png" loading="lazy" alt="Jaguar Concept" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -244,8 +212,7 @@
                         <p class="text-sm text-gray-500">Clean & Minimalist Car Poster</p>
                     </div>
                 </div>
-
-                <!-- Card 5: NFL -->
+                <!-- Card 5 -->
                 <div class="project-card group cursor-pointer" onclick="openModal('nfl.png')">
                     <div class="overflow-hidden rounded-2xl shadow-lg aspect-[4/5] bg-gray-200">
                         <img src="nfl.png" loading="lazy" alt="American Football" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -255,8 +222,7 @@
                         <p class="text-sm text-gray-500">High Energy Sports Editing</p>
                     </div>
                 </div>
-
-                <!-- Card 6: HotWheels (Playful) -->
+                <!-- Card 6 -->
                 <div class="project-card group cursor-pointer" onclick="openModal('hotwheels.png')">
                     <div class="overflow-hidden rounded-2xl shadow-lg aspect-[4/5] bg-gray-200">
                         <img src="hotwheels.png" loading="lazy" alt="HotWheels McLaren" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -266,66 +232,50 @@
                         <p class="text-sm text-gray-500">Product Advertisement Concept</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: COMMERCIAL & CREATIVE (Product + Art) -->
+    <!-- SECTION 3: COMMERCIAL & CREATIVE (Product + Art + CLINIC) -->
     <section id="commercial" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold mb-12">Commercial & Creative Art</h2>
             
-            <!-- ROW 1: SERUM PRODUCTS (Side by Side) -->
+            <!-- ROW 1: SERUM PRODUCTS -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <!-- Card: Product (Serum 1) -->
+                <!-- Serum 1 -->
                 <div class="bg-gray-50 rounded-3xl p-8 flex flex-col gap-6 group hover:bg-red-50 transition duration-500 cursor-pointer" onclick="openModal('serum.png')">
                     <div class="aspect-square rounded-xl overflow-hidden shadow-lg relative">
                         <img src="serum.png" loading="lazy" alt="Lacoco Serum" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-700">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-eye mr-2"></i> View Full</div>
                     </div>
                     <div>
                         <span class="text-red-600 font-bold tracking-wider text-xs uppercase mb-2 block">Commercial Photography</span>
                         <h3 class="text-2xl font-bold mb-3">Lacoco Serum: Red Edition</h3>
-                        <p class="text-gray-600 mb-4">Fokus pada pencahayaan dramatis (Red Neon) dan refleksi produk untuk menciptakan kesan mewah.</p>
-                        <div class="flex flex-wrap gap-2">
-                             <span class="bg-white px-3 py-1 rounded text-xs font-bold shadow-sm">Product Highlighting</span>
-                             <span class="bg-white px-3 py-1 rounded text-xs font-bold shadow-sm">Retouching</span>
-                        </div>
+                        <p class="text-gray-600 mb-4">Fokus pada pencahayaan dramatis (Red Neon) dan refleksi produk.</p>
                     </div>
                 </div>
-
-                <!-- Card: Product (Serum 2) -->
+                <!-- Serum 2 -->
                 <div class="bg-gray-50 rounded-3xl p-8 flex flex-col gap-6 group hover:bg-green-50 transition duration-500 cursor-pointer" onclick="openModal('serum2.png')">
                     <div class="aspect-square rounded-xl overflow-hidden shadow-lg relative">
                         <img src="serum2.png" loading="lazy" alt="Lacoco Serum Variant 2" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-700">
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-eye mr-2"></i> View Full</div>
                     </div>
                     <div>
                         <span class="text-green-600 font-bold tracking-wider text-xs uppercase mb-2 block">Commercial Photography</span>
                         <h3 class="text-2xl font-bold mb-3">Lacoco Serum: Nature Edition</h3>
-                        <p class="text-gray-600 mb-4">Eksplorasi visual untuk varian kedua dengan nuansa yang lebih segar dan natural.</p>
-                        <div class="flex flex-wrap gap-2">
-                             <span class="bg-white px-3 py-1 rounded text-xs font-bold shadow-sm">Product Highlighting</span>
-                             <span class="bg-white px-3 py-1 rounded text-xs font-bold shadow-sm">Retouching</span>
-                        </div>
+                        <p class="text-gray-600 mb-4">Eksplorasi visual untuk varian kedua dengan nuansa yang lebih segar.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- ROW 2: SPIDERMAN (Full Width Feature) -->
+            <!-- ROW 2: SPIDERMAN -->
             <div class="mb-12 cursor-pointer" onclick="openModal('spiderman.png')">
                 <div class="bg-blue-50 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 group hover:bg-blue-100 transition duration-500">
                     <div class="flex-1 order-2 md:order-1">
                         <span class="text-blue-600 font-bold tracking-wider text-xs uppercase mb-2 block">Digital Imaging Art</span>
                         <h3 class="text-3xl font-bold mb-4">The Spider-Verse Concept</h3>
                         <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-                            Eksperimen gaya visual "Comic Halftone" yang digabungkan dengan realisme. Proyek ini mengeksplorasi penggunaan tekstur kertas, tipografi komik, dan warna-warna vibrant untuk menciptakan poster film alternatif yang unik.
+                            Eksperimen gaya visual "Comic Halftone" yang digabungkan dengan realisme.
                         </p>
-                        <div class="flex gap-2">
-                             <span class="bg-white px-4 py-2 rounded-full text-sm font-bold shadow-sm">Manipulation</span>
-                             <span class="bg-white px-4 py-2 rounded-full text-sm font-bold shadow-sm">Pop Culture</span>
-                        </div>
                         <p class="mt-6 text-sm text-blue-500 font-semibold group-hover:translate-x-2 transition-transform inline-block">Klik untuk memperbesar gambar &rarr;</p>
                     </div>
                     <div class="w-full md:w-5/12 aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative order-1 md:order-2 transform rotate-2 group-hover:rotate-0 transition duration-500">
@@ -335,8 +285,7 @@
             </div>
 
             <!-- ROW 3: RGA PROJECT -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Card RGA 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 <div class="bg-white rounded-3xl p-6 shadow-md border border-gray-100 group cursor-pointer hover:shadow-xl transition duration-300" onclick="openModal('rga1.png')">
                     <div class="aspect-[4/5] rounded-xl overflow-hidden mb-4 bg-gray-100">
                         <img src="rga1.png" loading="lazy" alt="RGA Design 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
@@ -344,14 +293,45 @@
                     <h3 class="font-bold text-xl">RGA Project: Concept A</h3>
                     <p class="text-sm text-gray-500">Visual Identity & Branding Exploration</p>
                 </div>
-
-                <!-- Card RGA 2 -->
                 <div class="bg-white rounded-3xl p-6 shadow-md border border-gray-100 group cursor-pointer hover:shadow-xl transition duration-300" onclick="openModal('rga2.png')">
                     <div class="aspect-[4/5] rounded-xl overflow-hidden mb-4 bg-gray-100">
                         <img src="rga2.png" loading="lazy" alt="RGA Design 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                     </div>
                     <h3 class="font-bold text-xl">RGA Project: Concept B</h3>
                     <p class="text-sm text-gray-500">Visual Identity & Branding Exploration</p>
+                </div>
+            </div>
+
+            <!-- ROW 4: CLINIC DUMMY PROJECT (BARU) -->
+            <div class="mt-12 border-t border-gray-100 pt-12">
+                <div class="mb-8">
+                    <span class="text-teal-600 font-bold tracking-wider text-xs uppercase mb-2 block">Healthcare & Branding</span>
+                    <h3 class="text-3xl font-bold mb-2">Healthcare Project: Klinik Dummy</h3>
+                    <p class="text-gray-500 max-w-2xl">Konsep branding dan materi promosi untuk klinik kesehatan modern yang mengutamakan kepercayaan dan profesionalisme.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Klinik 1 -->
+                    <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-teal-50 cursor-pointer" onclick="openModal('klinik1.png')">
+                        <img src="klinik1.png" loading="lazy" alt="Clinic Design 1" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold tracking-widest border border-white px-3 py-1">VIEW</span>
+                        </div>
+                    </div>
+                    <!-- Klinik 2 -->
+                    <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-teal-50 cursor-pointer" onclick="openModal('klinik2.png')">
+                        <img src="klinik2.png" loading="lazy" alt="Clinic Design 2" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold tracking-widest border border-white px-3 py-1">VIEW</span>
+                        </div>
+                    </div>
+                    <!-- Klinik 3 -->
+                    <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-teal-50 cursor-pointer" onclick="openModal('klinik3.png')">
+                        <img src="klinik3.png" loading="lazy" alt="Clinic Design 3" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold tracking-widest border border-white px-3 py-1">VIEW</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -365,7 +345,7 @@
             <p class="text-gray-400 text-xl mb-12">
                 Tertarik bekerja sama untuk manajemen sosial media atau desain poster?
             </p>
-            <!-- BUTTON WA DIBAWAH INI YANG DIPERBARUI -->
+            <!-- BUTTON WA -->
             <a href="https://wa.me/6288994372264" target="_blank" class="inline-flex items-center bg-white text-black font-bold text-lg px-10 py-4 rounded-full hover:bg-green-500 hover:text-white transition duration-300 transform hover:-translate-y-1">
                 <i class="fa-brands fa-whatsapp mr-3 text-2xl"></i> Hubungi Saya
             </a>
