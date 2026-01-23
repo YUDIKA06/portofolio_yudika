@@ -3,363 +3,422 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YUDESIGN | Portfolio</title>
+    <title>Portofolio Yudika</title>
+    <!-- Tailwind CSS untuk styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Icon Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap');
-        
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #FAFAFA;
-            color: #111;
+        /* Custom scrollbar agar terlihat rapi di dalam modal */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
         }
         
-        .serif-font {
-            font-family: 'Playfair Display', serif;
+        /* Animasi sederhana untuk modal */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-
-        .phone-mockup {
-            border: 12px solid #222;
-            border-radius: 35px;
-            overflow: hidden;
-            background-color: white;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
-
-        .project-card {
-            transition: all 0.4s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        .project-card:hover img {
-            transform: scale(1.05);
-        }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+        .animate-zoom-in { animation: zoomIn 0.3s ease-out forwards; }
     </style>
 </head>
-<body class="antialiased selection:bg-orange-200 selection:text-orange-900">
+<body class="bg-neutral-50 text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white">
 
-    <!-- MODAL / LIGHTBOX -->
-    <div id="imageModal" class="fixed inset-0 z-[100] bg-black/95 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300" onclick="closeModal()">
-        <button class="fixed top-4 right-4 md:top-8 md:right-8 text-white text-6xl font-bold hover:text-orange-500 z-[101] focus:outline-none drop-shadow-lg transition-colors" onclick="closeModal()">&times;</button>
-        <img id="modalImage" src="" alt="Full View" class="max-h-[85vh] max-w-[95vw] object-contain rounded-lg shadow-2xl transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
-        <p class="absolute bottom-8 text-white/70 text-sm bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm">Klik di luar gambar untuk menutup</p>
-    </div>
-
-    <script>
-        function openModal(imageSrc) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            modalImg.src = imageSrc;
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                modalImg.classList.remove('scale-95');
-                modalImg.classList.add('scale-100');
-            }, 10);
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            modal.classList.add('opacity-0');
-            modalImg.classList.remove('scale-100');
-            modalImg.classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modalImg.src = ''; 
-            }, 300);
-        }
-    </script>
-
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="font-extrabold text-xl tracking-tighter">YUDESIGN.</div>
-            <div class="space-x-8 text-sm font-medium hidden md:block">
-                <a href="#case-study" class="hover:text-orange-600 transition">Case Study</a>
-                <a href="#automotive" class="hover:text-orange-600 transition">Automotive</a>
-                <a href="#commercial" class="hover:text-orange-600 transition">Commercial</a>
-                <a href="#contact" class="bg-black text-white px-5 py-2.5 rounded-full hover:bg-orange-600 transition">Contact Me</a>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 bg-neutral-50/90 backdrop-blur-md border-b border-neutral-200">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter">YUDIKA.</div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#work" class="hover:text-neutral-500 transition-colors">Work</a>
+                <a href="#about" class="hover:text-neutral-500 transition-colors">Process</a>
+                <a href="#contact" class="hover:text-neutral-500 transition-colors">Contact</a>
             </div>
+            <a href="https://wa.me/6288994372264" target="_blank" class="bg-neutral-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-neutral-700 transition-colors">
+                Hire Me
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="pt-40 pb-20 px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
-                Crafting Visuals that <br>
-                <span class="serif-font italic text-orange-600">Drive Attention.</span>
-            </h1>
-            <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-10">
-                Halo, saya Desainer Grafis & Social Media Specialist. Saya membantu brand menceritakan kisah mereka melalui manipulasi visual yang kuat dan strategi konten yang relevan.
-            </p>
-            <div class="flex justify-center gap-4">
-                <a href="#case-study" class="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-800 transition">Lihat Karya Terbaik</a>
-                <a href="#automotive" class="border border-gray-300 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Eksplorasi Visual</a>
+    <!-- Hero / About Me Section -->
+    <header class="pt-32 pb-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            
+            <!-- Text Content (Full Width) -->
+            <div class="w-full max-w-3xl">
+                <span class="text-blue-600 font-bold tracking-widest text-xs uppercase mb-3 block">About Me</span>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    Halo, Saya Yudika.
+                </h1>
+                <p class="text-lg text-neutral-600 leading-relaxed mb-6">
+                    Saya adalah desainer grafis yang berfokus pada keseimbangan antara <b>fungsionalitas</b> dan <b>estetika</b>. 
+                </p>
+                <p class="text-lg text-neutral-600 leading-relaxed mb-8">
+                    Bagi saya, desain bukan sekadar membuat gambar yang cantik, tetapi tentang bagaimana visual tersebut dapat memecahkan masalah, menyampaikan pesan, dan memberikan dampak nyata bagi audiens Anda.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <div class="px-4 py-2 bg-neutral-100 rounded-lg text-sm font-medium">Digital Imaging</div>
+                    <div class="px-4 py-2 bg-neutral-100 rounded-lg text-sm font-medium">Branding Strategy</div>
+                    <div class="px-4 py-2 bg-neutral-100 rounded-lg text-sm font-medium">UI/UX Design</div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#work" class="bg-neutral-900 text-white px-8 py-3 rounded-full font-bold hover:bg-neutral-700 transition-all flex items-center space-x-2">
+                        <span>Lihat Studi Kasus</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="https://wa.me/6288994372264" target="_blank" class="px-8 py-3 rounded-full font-bold border border-neutral-200 hover:border-neutral-900 hover:bg-neutral-50 transition-all flex items-center gap-2">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="https://instagram.com/yudika06_" target="_blank" class="p-3 rounded-full border border-neutral-200 hover:border-pink-600 hover:text-pink-600 hover:bg-neutral-50 transition-all" title="Instagram @yudika06_">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                </div>
             </div>
+
         </div>
     </header>
 
-    <!-- SECTION 1: REAL CASE STUDY (PURO) -->
-    <section id="case-study" class="py-20 bg-white border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex items-center gap-4 mb-12">
-                <span class="h-px w-12 bg-orange-600"></span>
-                <span class="text-orange-600 font-bold uppercase tracking-wider text-sm">Featured Case Study</span>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-16 items-start mb-16">
-                <!-- Kiri: Deskripsi Proyek -->
-                <div class="sticky top-32">
-                    <h2 class="serif-font text-4xl md:text-5xl mb-6">PURO Desserts: <br>Social Media Branding</h2>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        <strong>Peran:</strong> Content Creator & Graphic Designer.<br>
-                        <strong>Tantangan:</strong> Menciptakan identitas visual untuk brand puding UMKM agar terlihat premium namun tetap terjangkau dan relevan bagi anak muda yang "mager masak".
-                    </p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-orange-500 mr-3"></i> Meningkatkan estetika Feed Instagram.
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-orange-500 mr-3"></i> Copywriting yang <i>relatable</i> & santai.
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fa-solid fa-check text-orange-500 mr-3"></i> Desain promosi yang menggugah selera.
-                        </li>
-                    </ul>
-                    <a href="https://www.instagram.com/purodesserts" target="_blank" class="inline-flex items-center text-orange-600 font-bold hover:text-orange-700 transition">
-                        Kunjungi Instagram <i class="fa-solid fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-
-                <!-- Kanan: Visual Mockup FULL FEED -->
-                <div class="flex justify-center bg-gray-50 p-8 rounded-3xl border border-gray-100">
-                    <div class="phone-mockup w-72 shadow-2xl transition hover:scale-[1.02] duration-300">
-                        <img src="puro-feed.jpg" loading="lazy" alt="Instagram Feed Puro" class="w-full h-auto cursor-pointer" onclick="openModal(this.src)">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bagian Bawah: 4 POSTER DISPLAY -->
-            <div class="border-t border-gray-100 pt-12">
-                <div class="text-center mb-10">
-                    <h3 class="text-2xl font-bold mb-2">Campaign Visuals</h3>
-                    <p class="text-gray-500 text-sm">Poster promosi utama yang digunakan dalam kampanye media sosial.</p>
-                </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-gray-200">
-                        <img src="campaign1.png" loading="lazy" alt="Poster Campaign 1" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 cursor-pointer" onclick="openModal(this.src)">
-                    </div>
-                    <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-gray-200">
-                        <img src="campaign2.png" loading="lazy" alt="Poster Campaign 2" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 cursor-pointer" onclick="openModal(this.src)">
-                    </div>
-                    <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-gray-200">
-                        <img src="campaign3.png" loading="lazy" alt="Poster Campaign 3" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 cursor-pointer" onclick="openModal(this.src)">
-                    </div>
-                    <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-gray-200">
-                        <img src="campaign4.png" loading="lazy" alt="Poster Campaign 4" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 cursor-pointer" onclick="openModal(this.src)">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 2: AUTOMOTIVE & SPORTS (High Energy) -->
-    <section id="automotive" class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex items-center justify-between mb-12">
+    <!-- Work Section -->
+    <section id="work" class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-end justify-between mb-12">
                 <div>
-                    <h2 class="text-3xl font-bold mb-2">Automotive & Sports Series</h2>
-                    <p class="text-gray-500">Eksplorasi kecepatan, pencahayaan, dan komposisi dinamis.</p>
-                </div>
-                <div class="text-sm text-gray-400 italic hidden md:block">
-                    <i class="fa-solid fa-info-circle mr-2"></i>Klik gambar untuk memperbesar
+                    <h2 class="text-sm font-bold uppercase tracking-widest text-neutral-500 mb-2">Selected Works</h2>
+                    <h3 class="text-3xl font-bold">Studi Kasus Terbaru</h3>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="project-card group cursor-pointer" onclick="openModal('porsche.png')">
-                    <div class="overflow-hidden rounded-2xl shadow-lg aspect-[4/5] bg-gray-200">
-                        <img src="porsche.png" loading="lazy" alt="Porsche 911 Poster" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="mt-4">
-                        <h3 class="font-bold text-lg">Porsche 911 GT3 R</h3>
-                        <p class="text-sm text-gray-500">Automotive Layout Design</p>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="project-card group cursor-pointer" onclick="openModal('lando.png')">
-                    <div class="overflow-hidden rounded-2xl shadow-lg aspect-[4/5] bg-gray-200">
-                        <img src="lando.png" loading="lazy" alt="Lando Norris F1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="mt-4">
-                        <h3 class="font-bold text-lg">McLaren F1: Lando Norris</h3>
-                        <p class="text-sm text-gray-500">Sports Typography & Texture</p>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="project-card group cursor-pointer" onclick="openModal('jaguar.png')">
-                    <div class="overflow-hidden rounded-2xl shadow-lg aspect-[4/5] bg-gray-200">
-                        <img src="jaguar.png" loading="lazy" alt="Jaguar Concept" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="mt-4">
-                        <h3 class="font-bold text-lg">Jaguar C-X16</h3>
-                        <p class="text-sm text-gray-500">Clean & Minimalist Car Poster</p>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="project-card group cursor-pointer" onclick="openModal('nfl.png')">
-                    <div class="overflow-hidden rounded-2xl shadow-lg aspect-[4/5] bg-gray-200">
-                        <img src="nfl.png" loading="lazy" alt="American Football" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="mt-4">
-                        <h3 class="font-bold text-lg">NFL Matchday</h3>
-                        <p class="text-sm text-gray-500">High Energy Sports Editing</p>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="project-card group cursor-pointer" onclick="openModal('hotwheels.png')">
-                    <div class="overflow-hidden rounded-2xl shadow-lg aspect-[4/5] bg-gray-200">
-                        <img src="hotwheels.png" loading="lazy" alt="HotWheels McLaren" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="mt-4">
-                        <h3 class="font-bold text-lg">HotWheels x McLaren</h3>
-                        <p class="text-sm text-gray-500">Product Advertisement Concept</p>
-                    </div>
-                </div>
+            <!-- Grid Container for Projects (Generated by JS) -->
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project cards will be injected here -->
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: COMMERCIAL & CREATIVE (Product + Art + CLINIC) -->
-    <section id="commercial" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12">Commercial & Creative Art</h2>
-            
-            <!-- ROW 1: SERUM PRODUCTS -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <!-- Serum 1 -->
-                <div class="bg-gray-50 rounded-3xl p-8 flex flex-col gap-6 group hover:bg-red-50 transition duration-500 cursor-pointer" onclick="openModal('serum.png')">
-                    <div class="aspect-square rounded-xl overflow-hidden shadow-lg relative">
-                        <img src="serum.png" loading="lazy" alt="Lacoco Serum" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-700">
-                    </div>
-                    <div>
-                        <span class="text-red-600 font-bold tracking-wider text-xs uppercase mb-2 block">Commercial Photography</span>
-                        <h3 class="text-2xl font-bold mb-3">Lacoco Serum: Red Edition</h3>
-                        <p class="text-gray-600 mb-4">Fokus pada pencahayaan dramatis (Red Neon) dan refleksi produk.</p>
-                    </div>
+    <!-- Process Section -->
+    <section id="about" class="py-20 px-6 bg-neutral-900 text-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12">Workflow Desain</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 border border-neutral-800 rounded-2xl hover:bg-neutral-800 transition-colors">
+                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">1</div>
+                    <h3 class="text-xl font-bold mb-2">Discovery</h3>
+                    <p class="text-neutral-400 text-sm">Memahami tujuan bisnis, target audiens, dan masalah inti sebelum menyentuh software desain.</p>
                 </div>
-                <!-- Serum 2 -->
-                <div class="bg-gray-50 rounded-3xl p-8 flex flex-col gap-6 group hover:bg-green-50 transition duration-500 cursor-pointer" onclick="openModal('serum2.png')">
-                    <div class="aspect-square rounded-xl overflow-hidden shadow-lg relative">
-                        <img src="serum2.png" loading="lazy" alt="Lacoco Serum Variant 2" class="object-cover w-full h-full transform group-hover:scale-105 transition duration-700">
-                    </div>
-                    <div>
-                        <span class="text-green-600 font-bold tracking-wider text-xs uppercase mb-2 block">Commercial Photography</span>
-                        <h3 class="text-2xl font-bold mb-3">Lacoco Serum: Nature Edition</h3>
-                        <p class="text-gray-600 mb-4">Eksplorasi visual untuk varian kedua dengan nuansa yang lebih segar.</p>
-                    </div>
+                <div class="p-6 border border-neutral-800 rounded-2xl hover:bg-neutral-800 transition-colors">
+                    <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">2</div>
+                    <h3 class="text-xl font-bold mb-2">Crafting</h3>
+                    <p class="text-neutral-400 text-sm">Eksplorasi visual, tipografi, dan layout. Iterasi dilakukan berdasarkan feedback konstruktif.</p>
+                </div>
+                <div class="p-6 border border-neutral-800 rounded-2xl hover:bg-neutral-800 transition-colors">
+                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">3</div>
+                    <h3 class="text-xl font-bold mb-2">Delivery</h3>
+                    <p class="text-neutral-400 text-sm">Menyerahkan aset final yang siap pakai dan memberikan dampak nyata bagi bisnis Anda.</p>
                 </div>
             </div>
-
-            <!-- ROW 2: SPIDERMAN -->
-            <div class="mb-12 cursor-pointer" onclick="openModal('spiderman.png')">
-                <div class="bg-blue-50 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 group hover:bg-blue-100 transition duration-500">
-                    <div class="flex-1 order-2 md:order-1">
-                        <span class="text-blue-600 font-bold tracking-wider text-xs uppercase mb-2 block">Digital Imaging Art</span>
-                        <h3 class="text-3xl font-bold mb-4">The Spider-Verse Concept</h3>
-                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-                            Eksperimen gaya visual "Comic Halftone" yang digabungkan dengan realisme.
-                        </p>
-                        <p class="mt-6 text-sm text-blue-500 font-semibold group-hover:translate-x-2 transition-transform inline-block">Klik untuk memperbesar gambar &rarr;</p>
-                    </div>
-                    <div class="w-full md:w-5/12 aspect-[4/5] rounded-xl overflow-hidden shadow-2xl relative order-1 md:order-2 transform rotate-2 group-hover:rotate-0 transition duration-500">
-                        <img src="spiderman.png" loading="lazy" alt="Spiderman Poster" class="object-cover w-full h-full">
-                    </div>
-                </div>
-            </div>
-
-            <!-- ROW 3: RGA PROJECT -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                <div class="bg-white rounded-3xl p-6 shadow-md border border-gray-100 group cursor-pointer hover:shadow-xl transition duration-300" onclick="openModal('rga1.png')">
-                    <div class="aspect-[4/5] rounded-xl overflow-hidden mb-4 bg-gray-100">
-                        <img src="rga1.png" loading="lazy" alt="RGA Design 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3 class="font-bold text-xl">RGA Project: Concept A</h3>
-                    <p class="text-sm text-gray-500">Visual Identity & Branding Exploration</p>
-                </div>
-                <div class="bg-white rounded-3xl p-6 shadow-md border border-gray-100 group cursor-pointer hover:shadow-xl transition duration-300" onclick="openModal('rga2.png')">
-                    <div class="aspect-[4/5] rounded-xl overflow-hidden mb-4 bg-gray-100">
-                        <img src="rga2.png" loading="lazy" alt="RGA Design 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                    <h3 class="font-bold text-xl">RGA Project: Concept B</h3>
-                    <p class="text-sm text-gray-500">Visual Identity & Branding Exploration</p>
-                </div>
-            </div>
-
-            <!-- ROW 4: CLINIC DUMMY PROJECT (BARU) -->
-            <div class="mt-12 border-t border-gray-100 pt-12">
-                <div class="mb-8">
-                    <span class="text-teal-600 font-bold tracking-wider text-xs uppercase mb-2 block">Healthcare & Branding</span>
-                    <h3 class="text-3xl font-bold mb-2">Healthcare Project: Klinik Dummy</h3>
-                    <p class="text-gray-500 max-w-2xl">Konsep branding dan materi promosi untuk klinik kesehatan modern yang mengutamakan kepercayaan dan profesionalisme.</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Klinik 1 -->
-                    <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-teal-50 cursor-pointer" onclick="openModal('klinik1.png')">
-                        <img src="klinik1.png" loading="lazy" alt="Clinic Design 1" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                            <span class="text-white font-bold tracking-widest border border-white px-3 py-1">VIEW</span>
-                        </div>
-                    </div>
-                    <!-- Klinik 2 -->
-                    <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-teal-50 cursor-pointer" onclick="openModal('klinik2.png')">
-                        <img src="klinik2.png" loading="lazy" alt="Clinic Design 2" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                            <span class="text-white font-bold tracking-widest border border-white px-3 py-1">VIEW</span>
-                        </div>
-                    </div>
-                    <!-- Klinik 3 -->
-                    <div class="group relative rounded-xl overflow-hidden shadow-lg aspect-[4/5] bg-teal-50 cursor-pointer" onclick="openModal('klinik3.png')">
-                        <img src="klinik3.png" loading="lazy" alt="Clinic Design 3" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                            <span class="text-white font-bold tracking-widest border border-white px-3 py-1">VIEW</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-black text-white py-24 px-6">
+    <footer id="contact" class="py-20 px-6 bg-white border-t border-neutral-200">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="serif-font text-5xl md:text-6xl mb-8">Let's Create Something Iconic.</h2>
-            <p class="text-gray-400 text-xl mb-12">
-                Tertarik bekerja sama untuk manajemen sosial media atau desain poster?
+            <h2 class="text-4xl font-bold mb-6">Mari Bekerja Sama</h2>
+            <p class="text-neutral-600 mb-8 max-w-xl mx-auto">
+                Tertarik untuk mentransformasi brand Anda atau memiliki proyek desain? 
+                Saya siap membantu mewujudkan visi Anda.
             </p>
-            <!-- BUTTON WA -->
-            <a href="https://wa.me/6288994372264" target="_blank" class="inline-flex items-center bg-white text-black font-bold text-lg px-10 py-4 rounded-full hover:bg-green-500 hover:text-white transition duration-300 transform hover:-translate-y-1">
-                <i class="fa-brands fa-whatsapp mr-3 text-2xl"></i> Hubungi Saya
+            <a href="https://wa.me/6288994372264" target="_blank" class="inline-flex items-center space-x-2 bg-neutral-900 text-white px-8 py-4 rounded-full font-bold hover:bg-neutral-700 transition-all hover:scale-105">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span>Chat WhatsApp</span>
             </a>
             
-            <div class="mt-20 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-                <p>&copy; 2026 YUDESIGN Portfolio.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="https://www.instagram.com/yudika06_?igsh=MWM4NzZiaWI0OWhvZg==" target="_blank" class="hover:text-white">Instagram</a>
-                    <a href="https://id.linkedin.com/in/kahfian-yudika-81b9a0346" target="_blank" class="hover:text-white">LinkedIn</a>
-                </div>
+            <div class="mt-12 flex justify-center space-x-6 text-neutral-500">
+                <a href="https://instagram.com/yudika06_" target="_blank" class="hover:text-pink-600 transition-colors flex items-center gap-2">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                    <span class="text-sm font-medium">@yudika06_</span>
+                </a>
+            </div>
+            
+            <div class="mt-12 text-sm text-neutral-400">
+                &copy; <span id="year"></span> Yudika. All Rights Reserved.
             </div>
         </div>
     </footer>
 
+    <!-- MODAL POPUP (PROJECT DETAILS) -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-neutral-900/60 backdrop-blur-sm animate-fade-in" onclick="closeModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="bg-white w-full max-w-5xl h-[90vh] rounded-3xl overflow-hidden shadow-2xl relative flex flex-col md:flex-row animate-zoom-in">
+            
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-20 bg-white/80 hover:bg-white p-2 rounded-full transition-colors cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6 text-neutral-900"></i>
+            </button>
+
+            <!-- Left Side: Text Content -->
+            <div class="w-full md:w-1/2 overflow-y-auto p-8 md:p-12 bg-neutral-50 custom-scrollbar">
+                <span class="text-blue-600 font-bold tracking-widest text-xs uppercase mb-2 block">Case Study</span>
+                <h2 id="modal-title" class="text-3xl md:text-4xl font-bold mb-6">Project Title</h2>
+                
+                <div id="modal-tags" class="flex flex-wrap gap-2 mb-8">
+                    <!-- Tags injected via JS -->
+                </div>
+
+                <div class="space-y-8">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3 text-red-500">
+                            <i data-lucide="layout" class="w-5 h-5"></i>
+                            <h3 class="font-bold text-lg text-neutral-900">The Problem</h3>
+                        </div>
+                        <p id="modal-problem" class="text-neutral-600 leading-relaxed"></p>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center gap-2 mb-3 text-amber-500">
+                            <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                            <h3 class="font-bold text-lg text-neutral-900">The Process</h3>
+                        </div>
+                        <p id="modal-process" class="text-neutral-600 leading-relaxed"></p>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center gap-2 mb-3 text-green-600">
+                            <i data-lucide="check-circle" class="w-5 h-5"></i>
+                            <h3 class="font-bold text-lg text-neutral-900">The Solution</h3>
+                        </div>
+                        <p id="modal-solution" class="text-neutral-600 leading-relaxed"></p>
+                    </div>
+
+                    <!-- Link Button (Hidden by default, shown if project has link) -->
+                    <div id="modal-link-container" class="pt-4 border-t border-neutral-200 hidden">
+                        <a id="modal-link" href="#" target="_blank" class="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-700 transition-colors w-full justify-center md:w-auto">
+                            <i data-lucide="external-link" class="w-5 h-5"></i>
+                            <span>Lihat Prototype Figma</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Image Gallery -->
+            <div id="modal-images" class="w-full md:w-1/2 bg-neutral-200 overflow-y-auto p-4 md:p-8 space-y-4 custom-scrollbar">
+                <!-- Images injected via JS -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- IMAGE LIGHTBOX (FULL VIEW) -->
+    <div id="image-lightbox" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4 bg-black/95 backdrop-blur-sm cursor-pointer" onclick="closeImageLightbox()">
+        <!-- Close Button -->
+        <button onclick="closeImageLightbox()" class="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors p-2 z-50">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        
+        <!-- Image Container -->
+        <div class="relative w-full h-full flex items-center justify-center p-4">
+            <img id="lightbox-img" src="" alt="Full View" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl animate-zoom-in cursor-default" onclick="event.stopPropagation()">
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Data Projects
+        const projects = [
+            {
+                id: 1,
+                title: "Klinik Sehat Branding",
+                category: "Healthcare & Education",
+                thumbnail: "klinik1.png",
+                images: ["klinik1.png", "klinik2.png", "klinik3.png"],
+                scope: ["Brand Identity", "Educational Content", "Illustration", "Feed Management"],
+                problem: "Klinik kesehatan seringkali terlihat kaku dan menakutkan. Klien ingin mengubah persepsi ini menjadi lebih ramah, informatif, dan terpercaya bagi audiens muda dan keluarga.",
+                process: "Riset dilakukan terhadap psikologi warna medis. Saya memilih palet warna yang menenangkan (biru lembut & hijau) dipadukan dengan ilustrasi flat yang mudah dicerna untuk menjelaskan topik medis yang rumit.",
+                solution: "Transformasi visual feed sosial media yang rapi dan informatif. Menggunakan template modular yang memudahkan tim internal untuk update konten edukasi tanpa merusak estetika visual secara keseluruhan."
+            },
+            {
+                id: 2,
+                title: "Puro Premium Pudding",
+                category: "SME Rebranding",
+                thumbnail: "puro-feed.png",
+                images: ["puro-feed.png", "campaign1.png", "campaign2.png", "campaign3.png", "campaign4.png"],
+                scope: ["Rebranding", "Grid Layout", "Content Strategy", "Premium Visuals", "Marketing Campaign"],
+                problem: "Puro awalnya adalah UMKM dengan feed sosial media yang 'acak-acakan' dan tidak tertata. Hal ini menjadi masalah karena harga produk puding Puro cukup mahal (premium), sehingga visual yang ada tidak meyakinkan calon pembeli akan nilai produk tersebut.",
+                process: "Saya membangun ulang strategi visual dari nol. Fokus utama adalah menciptakan kesan 'mahal' dan higienis. Saya merapikan layout grid agar enak dipandang (eye-pleasing), memilih palet warna yang elegan, dan memastikan setiap postingan mencerminkan kualitas rasa dan harga.",
+                solution: "Transformasi total pada identitas digital Puro. Feed kini terlihat rapi, profesional, dan eksklusif. Visual baru ini berhasil memvalidasi harga produk yang tinggi di mata konsumen, meningkatkan kepercayaan, dan memperbaiki citra brand secara signifikan."
+            },
+            {
+                id: 3,
+                title: "RGA Visual Identity",
+                category: "Brand Identity",
+                thumbnail: "rga1.png",
+                images: ["rga1.png", "rga2.png"],
+                scope: ["Logo Usage", "Color Palette", "Brand Consistency"],
+                problem: "RGA membutuhkan identitas visual yang konsisten untuk memperkuat *brand presence* mereka. Tantangannya adalah menciptakan tampilan yang solid namun fleksibel untuk berbagai media.",
+                process: "Mengembangkan sistem desain yang terstruktur dengan panduan penggunaan logo dan warna yang ketat. Fokus pada kebersihan visual (cleanliness) untuk menonjolkan profesionalisme.",
+                solution: "Identitas visual yang kuat dan mudah dikenali. Aset desain RGA kini memiliki benang merah yang jelas, membuat brand terlihat lebih mapan dan terpercaya."
+            },
+            {
+                id: 4,
+                title: "Glow Serum Launch",
+                category: "Skincare Product Branding",
+                thumbnail: "serum.png",
+                images: ["serum.png", "serum2.png"],
+                scope: ["Product Photography", "Social Media Assets", "Campaign Visuals"],
+                problem: "Peluncuran produk serum baru di pasar yang sangat jenuh (saturated). Tantangannya adalah bagaimana membuat produk ini terlihat 'stand-out' dan menonjolkan kualitas bahan aktifnya hanya melalui visual.",
+                process: "Menggunakan pendekatan 'Clean Beauty' dengan pencahayaan lembut dan dominasi ruang putih (white space). Fotografi produk difokuskan pada tekstur dan kemasan untuk memberikan kesan mewah dan higienis.",
+                solution: "Aset visual yang elegan dan modern. Tampilan ini berhasil membangun persepsi 'high-end' dan mendukung peluncuran produk dengan angka engagement yang tinggi."
+            },
+            {
+                id: 5,
+                title: "High-Impact Digital Imaging",
+                category: "Photo Manipulation & Art Direction",
+                thumbnail: "porsche.png",
+                images: ["porsche.png", "jaguar.png", "lando.png", "hotwheels.png", "spiderman.png", "nfl.png"],
+                scope: ["Advanced Retouching", "Color Grading", "Composition", "Visual Effects"],
+                problem: "Kebutuhan akan visual yang dramatis dan imajinatif untuk menarik perhatian audiens di industri otomotif dan hiburan. Foto standar seringkali tidak cukup untuk menyampaikan emosi, kecepatan, atau fantasi.",
+                process: "Menggabungkan teknik komposisi digital, retouching mendalam, dan color grading sinematik. Saya fokus pada pencahayaan (lighting) yang realistis untuk menyatukan berbagai elemen terpisah menjadi satu kesatuan visual yang utuh dan dramatis.",
+                solution: "Karya digital imaging yang memiliki 'stopping power' kuat. Visual ini tidak hanya estetis tetapi juga mampu bercerita (storytelling) dalam satu frame, cocok untuk poster, iklan berenergi tinggi, dan konten viral."
+            },
+            {
+                id: 6,
+                title: "Food Delivery App UI/UX",
+                category: "App Design & Prototyping",
+                thumbnail: "UIUX Delivery Food.png",
+                images: ["UIUX Delivery Food.png"],
+                scope: ["User Research", "Wireframing", "Prototyping", "Figma"],
+                link: "https://www.figma.com/proto/AQ5dmAhO0h4Siwfl0D9kSF/Projek-Pertama?node-id=0-1&p=f&t=kPREN3wPvaPieuvK-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=9%3A91",
+                problem: "Pengguna sering kesulitan menemukan makanan yang diinginkan dengan cepat karena antarmuka aplikasi yang rumit dan navigasi yang membingungkan.",
+                process: "Dimulai dengan wireframing low-fidelity untuk menentukan alur pengguna. Desain visual dikembangkan dengan fokus pada kemudahan penggunaan (usability) dan estetika yang menggugah selera. Prototyping dilakukan di Figma untuk menguji interaksi.",
+                solution: "Desain antarmuka aplikasi pengiriman makanan yang bersih, intuitif, dan menarik secara visual. Fitur navigasi yang disederhanakan memudahkan pengguna untuk memesan makanan hanya dalam beberapa langkah."
+            }
+        ];
+
+        // Render Projects Grid
+        const gridContainer = document.getElementById('projects-grid');
+        
+        projects.forEach(project => {
+            const cardHTML = `
+                <div class="group cursor-pointer" onclick="openModal(${project.id})">
+                    <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-4 bg-neutral-100 border border-neutral-100">
+                        <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-all duration-300 z-10"></div>
+                        <img 
+                            src="${project.thumbnail}" 
+                            alt="${project.title}" 
+                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                            onerror="this.onerror=null; this.parentNode.innerHTML='<div class=&quot;flex items-center justify-center w-full h-full bg-neutral-200 text-neutral-500 text-xs p-4 text-center&quot;>File <b>${project.thumbnail}</b> belum ada</div>'"
+                        >
+                        <div class="absolute bottom-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-bold shadow-sm opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 z-20 text-neutral-900">
+                            Lihat Detail
+                        </div>
+                    </div>
+                    <h4 class="text-xl font-bold mb-1 group-hover:text-blue-600 transition-colors">${project.title}</h4>
+                    <p class="text-neutral-500 text-sm">${project.category}</p>
+                </div>
+            `;
+            gridContainer.innerHTML += cardHTML;
+        });
+
+        // Modal Functions
+        const modal = document.getElementById('project-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalTags = document.getElementById('modal-tags');
+        const modalProblem = document.getElementById('modal-problem');
+        const modalProcess = document.getElementById('modal-process');
+        const modalSolution = document.getElementById('modal-solution');
+        const modalImages = document.getElementById('modal-images');
+        const modalLinkContainer = document.getElementById('modal-link-container');
+        const modalLink = document.getElementById('modal-link');
+
+        function openModal(id) {
+            const project = projects.find(p => p.id === id);
+            if (!project) return;
+
+            // Populate Content
+            modalTitle.textContent = project.title;
+            modalProblem.textContent = project.problem;
+            modalProcess.textContent = project.process;
+            modalSolution.textContent = project.solution;
+
+            // Populate Tags
+            modalTags.innerHTML = project.scope.map(tag => 
+                `<span class="px-3 py-1 bg-white border border-neutral-200 rounded-full text-xs font-medium text-neutral-600">${tag}</span>`
+            ).join('');
+
+            // Populate Images (Updated with onclick for Lightbox)
+            modalImages.innerHTML = project.images.map(img => 
+                `<div class="rounded-xl overflow-hidden shadow-sm bg-white mb-4 cursor-zoom-in group relative" onclick="openImageLightbox('${img}')">
+                    <img src="${img}" alt="Detail" class="w-full h-auto object-cover group-hover:opacity-90 transition-opacity"
+                    onerror="this.onerror=null; this.parentNode.innerHTML='<div class=&quot;flex items-center justify-center p-8 text-neutral-400 bg-neutral-50 text-sm text-center&quot;>Gambar <b>${img}</b> tidak ditemukan.</div>'">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                         <div class="bg-black/50 text-white p-2 rounded-full backdrop-blur-sm">
+                            <i data-lucide="maximize-2" class="w-6 h-6"></i>
+                         </div>
+                    </div>
+                 </div>`
+            ).join('');
+            
+            // Handle Link Button
+            if (project.link) {
+                modalLinkContainer.classList.remove('hidden');
+                modalLink.href = project.link;
+            } else {
+                modalLinkContainer.classList.add('hidden');
+                modalLink.href = '#';
+            }
+
+            // Show Modal
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            lucide.createIcons(); // Re-init icons for the newly added maximize icon
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Lightbox Functions
+        const imageLightbox = document.getElementById('image-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openImageLightbox(src) {
+            lightboxImg.src = src;
+            imageLightbox.classList.remove('hidden');
+        }
+
+        function closeImageLightbox() {
+            imageLightbox.classList.add('hidden');
+            lightboxImg.src = ''; // Clear src
+        }
+
+        // Initialize Icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
-
