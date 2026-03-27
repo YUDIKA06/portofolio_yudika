@@ -282,7 +282,7 @@
                     <div id="modal-link-container" class="pt-4 border-t border-neutral-200 hidden">
                         <a id="modal-link" href="#" target="_blank" class="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-700 transition-colors w-full justify-center md:w-auto">
                             <i data-lucide="external-link" class="w-5 h-5"></i>
-                            <span>Lihat Prototype Figma</span>
+                            <span>Lihat Detail</span>
                         </a>
                     </div>
                 </div>
@@ -315,6 +315,17 @@
         const projects = [
             {
                 id: 1,
+                title: "FlexScent Decant Branding",
+                category: "SME Marketing Visuals",
+                thumbnail: "banner flexscent rollup.png", // Gantilah dengan nama file thumbnail kamu
+                images: ["banner flexscent biasa.png", "flexscent-vertical.jpg"], // Nama file banner kamu
+                scope: ["Banner Design", "Visual Identity", "Marketing Strategy", "SME Support"],
+                problem: "FlexScent, sebuah UMKM parfum decant, membutuhkan media promosi fisik yang menarik perhatian namun tetap terlihat profesional dan terpercaya (high-trust) untuk menunjukkan bahwa produk mereka 100% original.",
+                process: "Saya merancang dua format banner: horizontal (150x60cm) untuk spanduk toko dan vertikal (60x200cm) untuk X-Banner. Desain menggunakan background tekstur semen/industri yang modern, tipografi bold untuk menonjolkan harga mulai 5K, dan grid botol parfum yang rapi untuk menunjukkan variasi produk.",
+                solution: "Visual branding yang solid dan informatif. Banner ini memudahkan calon pembeli untuk langsung mengetahui rentang harga, pilihan ukuran (2ml, 5ml, 10ml), dan kategori parfum (Lokal, Designer, Timteng) hanya dalam sekali lihat."
+            },
+            {
+                id: 2,
                 title: "Klinik Sehat Branding",
                 category: "Healthcare & Education",
                 thumbnail: "klinik1.png",
@@ -325,7 +336,7 @@
                 solution: "Transformasi visual feed sosial media yang rapi dan informatif. Menggunakan template modular yang memudahkan tim internal untuk update konten edukasi tanpa merusak estetika visual secara keseluruhan."
             },
             {
-                id: 2,
+                id: 3,
                 title: "Puro Premium Pudding",
                 category: "SME Rebranding",
                 thumbnail: "puro-feed.jpg",
@@ -336,7 +347,7 @@
                 solution: "Transformasi total pada identitas digital Puro. Feed kini terlihat rapi, profesional, dan eksklusif. Visual baru ini berhasil memvalidasi harga produk yang tinggi di mata konsumen, meningkatkan kepercayaan, dan memperbaiki citra brand secara signifikan."
             },
             {
-                id: 3,
+                id: 4,
                 title: "RGA Visual Identity",
                 category: "Brand Identity",
                 thumbnail: "rga1.png",
@@ -347,7 +358,7 @@
                 solution: "Identitas visual yang kuat dan mudah dikenali. Aset desain RGA kini memiliki benang merah yang jelas, membuat brand terlihat lebih mapan dan terpercaya."
             },
             {
-                id: 4,
+                id: 5,
                 title: "Glow Serum Launch",
                 category: "Skincare Product Branding",
                 thumbnail: "serum.png",
@@ -358,7 +369,7 @@
                 solution: "Aset visual yang elegan dan modern. Tampilan ini berhasil membangun persepsi 'high-end' dan mendukung peluncuran produk dengan angka engagement yang tinggi."
             },
             {
-                id: 5,
+                id: 6,
                 title: "High-Impact Digital Imaging",
                 category: "Photo Manipulation & Art Direction",
                 thumbnail: "porsche.png",
@@ -369,7 +380,7 @@
                 solution: "Karya digital imaging yang memiliki 'stopping power' kuat. Visual ini tidak hanya estetis tetapi juga mampu bercerita (storytelling) dalam satu frame, cocok untuk poster, iklan berenergi tinggi, dan konten viral."
             },
             {
-                id: 6,
+                id: 7,
                 title: "Food Delivery App UI/UX",
                 category: "App Design & Prototyping",
                 thumbnail: "UIUX Delivery Food.png",
@@ -388,7 +399,7 @@
         projects.forEach(project => {
             const cardHTML = `
                 <div class="group cursor-pointer" onclick="openModal(${project.id})">
-                    <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-4 bg-neutral-100 border border-neutral-100">
+                    <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-4 bg-neutral-100 border border-neutral-200">
                         <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-all duration-300 z-10"></div>
                         <img 
                             src="${project.thumbnail}" 
