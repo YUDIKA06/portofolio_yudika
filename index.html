@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Yudika</title>
+    <title>Portofolio Yudika - Desainer Grafis & UI/UX</title>
     <!-- Tailwind CSS untuk styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Icon Library -->
@@ -20,11 +20,11 @@
             background: #f1f1f1;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #c1c1c1;
+            background: #cbd5e1;
             border-radius: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #a8a8a8;
+            background: #94a3b8;
         }
         
         /* Animasi sederhana untuk modal */
@@ -36,8 +36,8 @@
             from { transform: scale(0.95); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
-        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
-        .animate-zoom-in { animation: zoomIn 0.3s ease-out forwards; }
+        .animate-fade-in { animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-zoom-in { animation: zoomIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
         /* Mencegah gambar bergeser saat hover */
         .software-card {
@@ -54,13 +54,13 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-40 bg-neutral-50/90 backdrop-blur-md border-b border-neutral-200">
         <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tighter">YUDIKA.</div>
+            <div class="text-2xl font-bold tracking-tighter hover:scale-105 transition-transform duration-300 cursor-pointer">YUDIKA.</div>
             <div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="#work" class="hover:text-neutral-500 transition-colors">Work</a>
                 <a href="#about" class="hover:text-neutral-500 transition-colors">Process</a>
                 <a href="#contact" class="hover:text-neutral-500 transition-colors">Contact</a>
             </div>
-            <a href="https://wa.me/6288994372264" target="_blank" class="bg-neutral-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-neutral-700 transition-colors">
+            <a href="https://wa.me/6288994372264" target="_blank" class="bg-neutral-900 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-neutral-700 transition-colors shadow-sm">
                 Hire Me
             </a>
         </div>
@@ -70,28 +70,28 @@
     <header class="pt-32 pb-20 px-6">
         <div class="max-w-6xl mx-auto">
             
-            <!-- Text Content (Full Width) -->
+            <!-- Text Content -->
             <div class="w-full max-w-3xl">
                 <span class="text-blue-600 font-bold tracking-widest text-xs uppercase mb-3 block">About Me</span>
                 <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
                     Halo, Saya Yudika.
                 </h1>
                 <p class="text-lg text-neutral-600 leading-relaxed mb-6">
-                    Saya adalah desainer grafis yang berfokus pada keseimbangan antara <b>fungsionalitas</b> dan <b>estetika</b>. 
+                    Saya adalah desainer grafis & UI/UX yang berfokus pada keseimbangan antara <b class="text-neutral-900">fungsionalitas</b> dan <b class="text-neutral-900">estetika</b>. 
                 </p>
                 <p class="text-lg text-neutral-600 leading-relaxed mb-8">
-                    Bagi saya, desain bukan sekadar membuat gambar yang cantik, tetapi tentang bagaimana visual tersebut dapat memecahkan masalah, menyampaikan pesan, dan memberikan dampak nyata bagi audiens Anda.
+                    Bagi saya, desain bukan sekadar membuat gambar yang cantik, tetapi tentang bagaimana visual tersebut dapat memecahkan masalah nyata, menyampaikan pesan secara intuitif, dan memberikan dampak nyata bagi pengguna serta bisnis Anda.
                 </p>
                 
                 <!-- Skill Tags -->
                 <div class="flex flex-wrap gap-3 mb-8">
-                    <span class="px-4 py-2 bg-neutral-100 rounded-lg text-sm font-medium text-neutral-600 border border-neutral-200">Digital Imaging</span>
-                    <span class="px-4 py-2 bg-neutral-100 rounded-lg text-sm font-medium text-neutral-600 border border-neutral-200">Branding Strategy</span>
-                    <span class="px-4 py-2 bg-neutral-100 rounded-lg text-sm font-medium text-neutral-600 border border-neutral-200">UI/UX Design</span>
+                    <span class="px-4 py-2 bg-neutral-100 rounded-lg text-sm font-medium text-neutral-600 border border-neutral-200">Graphic Designer</span>
+                    <span class="px-4 py-2 bg-neutral-100 rounded-lg text-sm font-medium text-neutral-600 border border-neutral-200">Illustrator</span>
+                    <span class="px-4 py-2 bg-neutral-100 rounded-lg text-sm font-medium text-neutral-600 border border-neutral-200">UI/UX Designer</span>
                 </div>
 
-                <!-- Software Logos - FIXED WITH GRID -->
-                <div class="mb-12">
+                <!-- Software Logos -->
+                <div class="mb-10">
                     <h3 class="text-xs font-bold text-neutral-400 uppercase tracking-widest mb-6">Software Proficiency</h3>
                     <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6 max-w-2xl">
                         
@@ -127,14 +127,6 @@
                             <span class="text-[10px] font-bold text-neutral-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Figma</span>
                         </div>
 
-                        <!-- CapCut -->
-                        <div class="software-card group" title="CapCut">
-                            <div class="w-14 h-14 bg-white border border-neutral-200 rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-all group-hover:-translate-y-1 overflow-hidden p-2.5">
-                                <img src="https://upload.wikimedia.org/wikipedia/id/3/36/CapCut_logo.png" alt="CapCut" class="w-full h-full object-contain">
-                            </div>
-                            <span class="text-[10px] font-bold text-neutral-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">CapCut</span>
-                        </div>
-
                         <!-- Canva -->
                         <div class="software-card group" title="Canva">
                             <div class="w-14 h-14 bg-white border border-neutral-200 rounded-xl flex items-center justify-center shadow-sm group-hover:shadow-md transition-all group-hover:-translate-y-1 overflow-hidden p-2.5">
@@ -151,12 +143,18 @@
                         <span>Lihat Studi Kasus</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
-                    <a href="https://wa.me/6288994372264" target="_blank" class="px-8 py-3 rounded-full font-bold border border-neutral-200 hover:border-neutral-900 hover:bg-neutral-50 transition-all flex items-center gap-2">
+                    <a href="https://wa.me/6288994372264" target="_blank" class="px-8 py-3 rounded-full font-bold border border-neutral-200 hover:border-neutral-900 hover:bg-neutral-50 transition-all flex items-center gap-2 shadow-sm">
                         <i data-lucide="message-circle" class="w-5 h-5"></i>
                         <span>WhatsApp</span>
                     </a>
-                    <a href="https://instagram.com/yudika06_" target="_blank" class="p-3 rounded-full border border-neutral-200 hover:border-pink-600 hover:text-pink-600 hover:bg-neutral-50 transition-all" title="Instagram @yudika06_">
-                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    <!-- Instagram Hero Button -->
+                    <a href="https://instagram.com/yudika06_" target="_blank" class="px-6 py-3 rounded-full font-bold border border-neutral-200 hover:border-pink-600 hover:text-pink-600 hover:bg-neutral-50 transition-all flex items-center gap-2 shadow-sm" title="Instagram @yudika06_">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span class="text-sm font-medium">@yudika06_</span>
                     </a>
                 </div>
             </div>
@@ -165,18 +163,26 @@
     </header>
 
     <!-- Work Section -->
-    <section id="work" class="py-20 px-6 bg-white">
+    <section id="work" class="py-20 px-6 bg-white border-t border-neutral-100">
         <div class="max-w-6xl mx-auto">
-            <div class="flex items-end justify-between mb-12">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-6">
                 <div>
                     <h2 class="text-sm font-bold uppercase tracking-widest text-neutral-500 mb-2">Selected Works</h2>
                     <h3 class="text-3xl font-bold">Studi Kasus Terbaru</h3>
                 </div>
+                
+                <!-- Category Filters -->
+                <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                    <button onclick="filterProjects('all')" id="btn-filter-all" class="filter-btn px-4 py-2 bg-neutral-900 text-white rounded-full transition-all duration-300">Semua</button>
+                    <button onclick="filterProjects('UI/UX Design')" id="btn-filter-uiux" class="filter-btn px-4 py-2 bg-neutral-100 text-neutral-600 hover:bg-neutral-200 rounded-full transition-all duration-300">UI/UX Design</button>
+                    <button onclick="filterProjects('Branding')" id="btn-filter-branding" class="filter-btn px-4 py-2 bg-neutral-100 text-neutral-600 hover:bg-neutral-200 rounded-full transition-all duration-300">Branding</button>
+                    <button onclick="filterProjects('Digital Imaging')" id="btn-filter-di" class="filter-btn px-4 py-2 bg-neutral-100 text-neutral-600 hover:bg-neutral-200 rounded-full transition-all duration-300">Digital Imaging</button>
+                </div>
             </div>
 
             <!-- Grid Container for Projects -->
-            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project cards will be injected here via JS -->
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[300px]">
+                <!-- Project cards will be injected here -->
             </div>
         </div>
     </section>
@@ -213,14 +219,19 @@
                 Tertarik untuk mentransformasi brand Anda atau memiliki proyek desain? 
                 Saya siap membantu mewujudkan visi Anda.
             </p>
-            <a href="https://wa.me/6288994372264" target="_blank" class="inline-flex items-center space-x-2 bg-neutral-900 text-white px-8 py-4 rounded-full font-bold hover:bg-neutral-700 transition-all hover:scale-105">
+            <a href="https://wa.me/6288994372264" target="_blank" class="inline-flex items-center space-x-2 bg-neutral-900 text-white px-8 py-4 rounded-full font-bold hover:bg-neutral-700 transition-all hover:scale-105 shadow-md">
                 <i data-lucide="message-circle" class="w-5 h-5"></i>
                 <span>Chat WhatsApp</span>
             </a>
             
             <div class="mt-12 flex justify-center space-x-6 text-neutral-500">
+                <!-- Instagram Footer Button -->
                 <a href="https://instagram.com/yudika06_" target="_blank" class="hover:text-pink-600 transition-colors flex items-center gap-2">
-                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
                     <span class="text-sm font-medium">@yudika06_</span>
                 </a>
             </div>
@@ -240,13 +251,13 @@
         <div class="bg-white w-full max-w-5xl h-[90vh] rounded-3xl overflow-hidden shadow-2xl relative flex flex-col md:flex-row animate-zoom-in">
             
             <!-- Close Button -->
-            <button onclick="closeModal()" class="absolute top-4 right-4 z-20 bg-white/80 hover:bg-white p-2 rounded-full transition-colors cursor-pointer">
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-20 bg-white/80 hover:bg-white p-2 rounded-full transition-colors cursor-pointer shadow-sm">
                 <i data-lucide="x" class="w-6 h-6 text-neutral-900"></i>
             </button>
 
             <!-- Left Side: Text Content -->
             <div class="w-full md:w-1/2 overflow-y-auto p-8 md:p-12 bg-neutral-50 custom-scrollbar">
-                <span class="text-blue-600 font-bold tracking-widest text-xs uppercase mb-2 block">Case Study</span>
+                <span id="modal-badge" class="text-blue-600 font-bold tracking-widest text-[10px] uppercase mb-2 block">Case Study</span>
                 <h2 id="modal-title" class="text-3xl md:text-4xl font-bold mb-6">Project Title</h2>
                 
                 <div id="modal-tags" class="flex flex-wrap gap-2 mb-8">
@@ -259,7 +270,7 @@
                             <i data-lucide="layout" class="w-5 h-5"></i>
                             <h3 class="font-bold text-lg text-neutral-900">The Problem</h3>
                         </div>
-                        <p id="modal-problem" class="text-neutral-600 leading-relaxed"></p>
+                        <p id="modal-problem" class="text-neutral-600 leading-relaxed text-sm md:text-base"></p>
                     </div>
 
                     <div>
@@ -267,7 +278,7 @@
                             <i data-lucide="pen-tool" class="w-5 h-5"></i>
                             <h3 class="font-bold text-lg text-neutral-900">The Process</h3>
                         </div>
-                        <p id="modal-process" class="text-neutral-600 leading-relaxed"></p>
+                        <p id="modal-process" class="text-neutral-600 leading-relaxed text-sm md:text-base"></p>
                     </div>
 
                     <div>
@@ -275,10 +286,10 @@
                             <i data-lucide="check-circle" class="w-5 h-5"></i>
                             <h3 class="font-bold text-lg text-neutral-900">The Solution</h3>
                         </div>
-                        <p id="modal-solution" class="text-neutral-600 leading-relaxed"></p>
+                        <p id="modal-solution" class="text-neutral-600 leading-relaxed text-sm md:text-base"></p>
                     </div>
 
-                    <!-- Link Button -->
+                    <!-- Link Button (Hidden by default, shown if project has link) -->
                     <div id="modal-link-container" class="pt-4 border-t border-neutral-200 hidden">
                         <a id="modal-link" href="#" target="_blank" class="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-700 transition-colors w-full justify-center md:w-auto">
                             <i data-lucide="external-link" class="w-5 h-5"></i>
@@ -298,6 +309,7 @@
 
     <!-- IMAGE LIGHTBOX (FULL VIEW) -->
     <div id="image-lightbox" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4 bg-black/95 backdrop-blur-sm cursor-pointer" onclick="closeImageLightbox()">
+        <!-- Close Button -->
         <button onclick="closeImageLightbox()" class="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors p-2 z-50">
             <i data-lucide="x" class="w-10 h-10"></i>
         </button>
@@ -315,19 +327,44 @@
         const projects = [
             {
                 id: 1,
+                title: "DKonek - Omnichannel Dashboard App",
+                category: "UI/UX Design",
+                badge: "Lomba UI/UX - Competition Project",
+                thumbnail: "UIUX DKonek.png",
+                images: [
+                    "UIUX DKonek2.png", 
+                    "UIUX DKonek inventory.png", 
+                    "UIUX DKonek Notifikasi.png", 
+                    "UIUX DKonek Finance.png", 
+                    "UIUX DKonek Profile.png", 
+                    "UIUX DKonek.png"
+                ],
+                scope: ["User Research", "Omnichannel Logic", "Information Architecture", "High-Fidelity UI", "Financial Dashboard", "Interactive Prototyping"],
+                link: "https://www.figma.com/proto/LKnhxbt61iBVy01mazp7h1/Untitled?node-id=0-1&t=mV2aO6ilrKR8F9vI-1",
+                problem: "Para online seller skala UMKM sering kewalahan mengelola banyak toko di berbagai marketplace (Shopee, Tokopedia, dll.). Akibatnya, terjadi selisih stok antar-platform yang memicu penalti pembatalan, serta laporan keuangan kotor/bersih yang tercampur aduk dan berantakan.",
+                process: "Proyek kompetisi/lomba ini dirancang berdasarkan riset mendalam terhadap operasional harian merchant. Saya merancang alur sinkronisasi data terpusat menggunakan global filter dropdown tunggal serta memodifikasi fungsionalitas manajemen order menjadi 'Notification-Driven Action' agar tampilan dasbor utama tetap bersih dan fungsional.",
+                solution: "Menghasilkan DKonek, aplikasi dasbor SaaS terpusat. Fitur utamanya mencakup otomasi 'Master Product Mapping' untuk stok real-time lintas platform, ringkasan akuntansi finansial otomatis (Total Income, Expenditures, Net Profit), serta pusat panduan pengguna 'Help Center' berbasis visual Glassmorphism modern."
+            },
+            {
+                id: 2,
                 title: "FlexScent Decant Branding",
-                category: "SME Marketing Visuals",
-                thumbnail: "Flexscent Tumbnail.jpeg", // Gantilah dengan nama file thumbnail kamu
-                images: ["banner flexscent biasa.png", "banner flexscent rollup.png","Flexscent Tumbnail.jpeg"], // Nama file banner kamu
+                category: "Branding",
+                badge: "Case Study",
+                thumbnail: "banner flexscent rollup.png", // Menggunakan banner rollup sebagai cover utama
+                images: [
+                    "banner flexscent biasa.png", 
+                    "banner flexscent rollup.png"
+                ],
                 scope: ["Banner Design", "Visual Identity", "Marketing Strategy", "SME Support"],
                 problem: "FlexScent, sebuah UMKM parfum decant, membutuhkan media promosi fisik yang menarik perhatian namun tetap terlihat profesional dan terpercaya (high-trust) untuk menunjukkan bahwa produk mereka 100% original.",
                 process: "Saya merancang dua format banner: horizontal (150x60cm) untuk spanduk toko dan vertikal (60x200cm) untuk X-Banner. Desain menggunakan background tekstur semen/industri yang modern, tipografi bold untuk menonjolkan harga mulai 5K, dan grid botol parfum yang rapi untuk menunjukkan variasi produk.",
                 solution: "Visual branding yang solid dan informatif. Banner ini memudahkan calon pembeli untuk langsung mengetahui rentang harga, pilihan ukuran (2ml, 5ml, 10ml), dan kategori parfum (Lokal, Designer, Timteng) hanya dalam sekali lihat."
             },
             {
-                id: 2,
+                id: 3,
                 title: "Klinik Sehat Branding",
-                category: "Healthcare & Education",
+                category: "Branding",
+                badge: "Concept / Dummy Project",
                 thumbnail: "klinik1.png",
                 images: ["klinik1.png", "klinik2.png", "klinik3.png"],
                 scope: ["Brand Identity", "Educational Content", "Illustration", "Feed Management"],
@@ -336,20 +373,22 @@
                 solution: "Transformasi visual feed sosial media yang rapi dan informatif. Menggunakan template modular yang memudahkan tim internal untuk update konten edukasi tanpa merusak estetika visual secara keseluruhan."
             },
             {
-                id: 3,
+                id: 4,
                 title: "Puro Premium Pudding",
-                category: "SME Rebranding",
+                category: "Branding",
+                badge: "Case Study",
                 thumbnail: "puro-feed.jpg",
                 images: ["puro-feed.jpg", "campaign1.png", "campaign2.png", "campaign3.png", "campaign4.png"],
                 scope: ["Rebranding", "Grid Layout", "Content Strategy", "Premium Visuals", "Marketing Campaign"],
-                problem: "Puro awalnya adalah UMKM dengan feed sosial media yang 'acak-acakan' dan tidak tertata. Hal ini menjadi masalah karena harga produk puding Puro cukup mahal (premium), sehingga visual yang ada tidak meyakinkan calon pembeli akan nilai produk tersebut.",
-                process: "Saya membangun ulang strategi visual dari nol. Fokus utama adalah menciptakan kesan 'mahal' dan higienis. Saya merapikan layout grid agar enak dipandang (eye-pleasing), memilih palet warna yang elegan, dan memastikan setiap postingan mencerminkan kualitas rasa dan harga.",
+                problem: "Puro awalnya adalah UMKM dengan feed sosial media yang 'acak-acakan' and tidak tertata. Hal ini menjadi masalah karena harga produk puding Puro cukup mahal (premium), sehingga visual yang ada tidak meyakinkan calon pembeli akan nilai produk tersebut.",
+                process: "Saya membangun ulang strategi visual dari nol. Fokus utama adalah menciptakan kesan 'mahal' and higienis. Saya merapikan layout grid agar enak dipandang (eye-pleasing), memilih palet warna yang elegan, dan memastikan setiap postingan mencerminkan kualitas rasa and harga.",
                 solution: "Transformasi total pada identitas digital Puro. Feed kini terlihat rapi, profesional, dan eksklusif. Visual baru ini berhasil memvalidasi harga produk yang tinggi di mata konsumen, meningkatkan kepercayaan, dan memperbaiki citra brand secara signifikan."
             },
             {
-                id: 4,
+                id: 5,
                 title: "RGA Visual Identity",
-                category: "Brand Identity",
+                category: "Branding",
+                badge: "Tugas Kuliah - College Project",
                 thumbnail: "rga1.png",
                 images: ["rga1.png", "rga2.png"],
                 scope: ["Logo Usage", "Color Palette", "Brand Consistency"],
@@ -358,69 +397,140 @@
                 solution: "Identitas visual yang kuat dan mudah dikenali. Aset desain RGA kini memiliki benang merah yang jelas, membuat brand terlihat lebih mapan dan terpercaya."
             },
             {
-                id: 5,
+                id: 6,
                 title: "Glow Serum Launch",
-                category: "Skincare Product Branding",
+                category: "Branding",
+                badge: "Case Study",
                 thumbnail: "serum.png",
                 images: ["serum.png", "serum2.png"],
                 scope: ["Product Photography", "Social Media Assets", "Campaign Visuals"],
                 problem: "Peluncuran produk serum baru di pasar yang sangat jenuh (saturated). Tantangannya adalah bagaimana membuat produk ini terlihat 'stand-out' dan menonjolkan kualitas bahan aktifnya hanya melalui visual.",
                 process: "Menggunakan pendekatan 'Clean Beauty' dengan pencahayaan lembut dan dominasi ruang putih (white space). Fotografi produk difokuskan pada tekstur dan kemasan untuk memberikan kesan mewah dan higienis.",
-                solution: "Aset visual yang elegan dan modern. Tampilan ini berhasil membangun persepsi 'high-end' dan mendukung peluncuran produk dengan angka engagement yang tinggi."
+                solution: "Aset visual yang elegan and modern. Tampilan ini berhasil membangun persepsi 'high-end' and mendukung peluncuran produk dengan angka engagement yang tinggi."
             },
             {
-                id: 6,
+                id: 7,
                 title: "High-Impact Digital Imaging",
-                category: "Photo Manipulation & Art Direction",
+                category: "Digital Imaging",
+                badge: "Case Study",
                 thumbnail: "porsche.png",
                 images: ["porsche.png", "jaguar.png", "lando.png", "hotwheels.png", "spiderman.png", "nfl.png"],
                 scope: ["Advanced Retouching", "Color Grading", "Composition", "Visual Effects"],
                 problem: "Kebutuhan akan visual yang dramatis dan imajinatif untuk menarik perhatian audiens di industri otomotif dan hiburan. Foto standar seringkali tidak cukup untuk menyampaikan emosi, kecepatan, atau fantasi.",
-                process: "Menggabungkan teknik komposisi digital, retouching mendalam, dan color grading sinematik. Saya fokus pada pencahayaan (lighting) yang realistis untuk menyatukan berbagai elemen terpisah menjadi satu kesatuan visual yang utuh dan dramatis.",
+                process: "Menggunakan penggabungan teknik komposisi digital, retouching mendalam, dan color grading sinematik. Saya fokus pada pencahayaan (lighting) yang realistis untuk menyatukan berbagai elemen terpisah menjadi satu kesatuan visual yang utuh dan dramatis.",
                 solution: "Karya digital imaging yang memiliki 'stopping power' kuat. Visual ini tidak hanya estetis tetapi juga mampu bercerita (storytelling) dalam satu frame, cocok untuk poster, iklan berenergi tinggi, dan konten viral."
             },
             {
-                id: 7,
+                id: 8,
                 title: "Food Delivery App UI/UX",
-                category: "App Design & Prototyping",
+                category: "UI/UX Design",
+                badge: "Concept / Dummy Project",
                 thumbnail: "UIUX Delivery Food.png",
                 images: ["UIUX Delivery Food.png"],
                 scope: ["User Research", "Wireframing", "Prototyping", "Figma"],
                 link: "https://www.figma.com/proto/AQ5dmAhO0h4Siwfl0D9kSF/Projek-Pertama?node-id=0-1&p=f&t=kPREN3wPvaPieuvK-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=9%3A91",
                 problem: "Pengguna sering kesulitan menemukan makanan yang diinginkan dengan cepat karena antarmuka aplikasi yang rumit dan navigasi yang membingungkan.",
-                process: "Dimulai dengan wireframing low-fidelity untuk menentukan alur pengguna. Desain visual dikembangkan dengan fokus pada kemudahan penggunaan (usability) dan estetika yang menggugah selera. Prototyping dilakukan di Figma untuk menguji interaksi.",
+                process: "Dimulai dengan wireframing low-fidelity untuk menentukan alur pengguna. Desain visual dikembangkan dengan fokus pada kemudahan penggunaan (usability) and estetika yang menggugah selera. Prototyping dilakukan di Figma untuk menguji interaksi.",
                 solution: "Desain antarmuka aplikasi pengiriman makanan yang bersih, intuitif, dan menarik secara visual. Fitur navigasi yang disederhanakan memudahkan pengguna untuk memesan makanan hanya dalam beberapa langkah."
             }
         ];
 
-        // Render Projects Grid
-        const gridContainer = document.getElementById('projects-grid');
-        
-        projects.forEach(project => {
-            const cardHTML = `
-                <div class="group cursor-pointer" onclick="openModal(${project.id})">
-                    <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-4 bg-neutral-100 border border-neutral-200">
-                        <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-all duration-300 z-10"></div>
-                        <img 
-                            src="${project.thumbnail}" 
-                            alt="${project.title}" 
-                            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                            onerror="this.onerror=null; this.parentNode.innerHTML='<div class=&quot;flex items-center justify-center w-full h-full bg-neutral-200 text-neutral-500 text-xs p-4 text-center&quot;>File <b>${project.thumbnail}</b> belum ada</div>'"
-                        >
-                        <div class="absolute bottom-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-bold shadow-sm opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 z-20 text-neutral-900">
-                            Lihat Detail
-                        </div>
-                    </div>
-                    <h4 class="text-xl font-bold mb-1 group-hover:text-blue-600 transition-colors">${project.title}</h4>
-                    <p class="text-neutral-500 text-sm">${project.category}</p>
-                </div>
-            `;
-            gridContainer.innerHTML += cardHTML;
-        });
+        // Global State untuk Filter Kategori Aktif
+        let currentCategory = 'all';
 
-        // Modal Functions
+        // Render Projects Grid berdasarkan filter
+        function renderProjects() {
+            const gridContainer = document.getElementById('projects-grid');
+            gridContainer.innerHTML = '';
+            
+            const filteredProjects = currentCategory === 'all' 
+                ? projects 
+                : projects.filter(p => p.category === currentCategory);
+
+            if (filteredProjects.length === 0) {
+                gridContainer.innerHTML = `
+                    <div class="col-span-full flex flex-col items-center justify-center py-20 text-neutral-400">
+                        <i data-lucide="folder-open" class="w-12 h-12 mb-3"></i>
+                        <p class="text-sm font-medium">Belum ada karya untuk kategori ini.</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            filteredProjects.forEach(project => {
+                // Klasifikasi jenis badge untuk styling warna
+                const isCompetition = project.badge.toLowerCase().includes('competition') || project.badge.toLowerCase().includes('lomba');
+                const isCollege = project.badge.toLowerCase().includes('college') || project.badge.toLowerCase().includes('kuliah');
+                const isDummy = project.badge.toLowerCase().includes('concept') || project.badge.toLowerCase().includes('dummy');
+
+                // Berikan pewarnaan khusus pada badge agar terstruktur secara visual
+                const badgeColorClass = isCompetition 
+                    ? 'bg-blue-600 text-white' 
+                    : (isCollege 
+                        ? 'bg-emerald-600 text-white' 
+                        : (isDummy 
+                            ? 'bg-neutral-500 text-white' 
+                            : 'bg-neutral-900 text-white'));
+
+                const cardHTML = `
+                    <div class="group cursor-pointer animate-fade-in" onclick="openModal(${project.id})">
+                        <div class="relative overflow-hidden rounded-2xl aspect-[4/3] mb-4 bg-neutral-100 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <div class="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/10 transition-all duration-300 z-10"></div>
+                            <img 
+                                src="${project.thumbnail}" 
+                                alt="${project.title}" 
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=60';"
+                            >
+                            <div class="absolute top-4 left-4 ${badgeColorClass} px-3 py-1 rounded-full text-[9px] font-bold tracking-wider uppercase shadow-sm z-20 flex items-center gap-1.5">
+                                ${isCompetition ? '<i data-lucide="trophy" class="w-3.5 h-3.5 text-amber-300"></i>' : ''}
+                                ${isCollege ? '<i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-emerald-200"></i>' : ''}
+                                ${project.badge}
+                            </div>
+                            <div class="absolute bottom-4 right-4 bg-white px-4 py-1.5 rounded-full text-xs font-bold shadow-sm opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 z-20 text-neutral-900">
+                                Lihat Detail
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold mb-1 group-hover:text-blue-600 transition-colors flex items-center gap-2">
+                            ${project.title}
+                        </h4>
+                        <p class="text-neutral-500 text-sm font-medium">${project.category}</p>
+                    </div>
+                `;
+                gridContainer.innerHTML += cardHTML;
+            });
+            lucide.createIcons();
+        }
+
+        // Fungsi filter kategori dengan tombol aktif bergaya minimalis
+        function filterProjects(category) {
+            currentCategory = category;
+            
+            // Atur styling tombol filter aktif
+            const buttons = {
+                'all': 'btn-filter-all',
+                'UI/UX Design': 'btn-filter-uiux',
+                'Branding': 'btn-filter-branding',
+                'Digital Imaging': 'btn-filter-di'
+            };
+
+            Object.keys(buttons).forEach(key => {
+                const btn = document.getElementById(buttons[key]);
+                if (key === category) {
+                    btn.className = "filter-btn px-4 py-2 bg-neutral-900 text-white rounded-full transition-all duration-300 shadow-sm";
+                } else {
+                    btn.className = "filter-btn px-4 py-2 bg-neutral-100 text-neutral-600 hover:bg-neutral-200 rounded-full transition-all duration-300";
+                }
+            });
+
+            renderProjects();
+        }
+
+        // Modal Elements
         const modal = document.getElementById('project-modal');
         const modalTitle = document.getElementById('modal-title');
+        const modalBadge = document.getElementById('modal-badge');
         const modalTags = document.getElementById('modal-tags');
         const modalProblem = document.getElementById('modal-problem');
         const modalProcess = document.getElementById('modal-process');
@@ -435,6 +545,7 @@
 
             // Populate Content
             modalTitle.textContent = project.title;
+            modalBadge.textContent = project.badge || "Case Study";
             modalProblem.textContent = project.problem;
             modalProcess.textContent = project.process;
             modalSolution.textContent = project.solution;
@@ -444,21 +555,21 @@
                 `<span class="px-3 py-1 bg-white border border-neutral-200 rounded-full text-xs font-medium text-neutral-600">${tag}</span>`
             ).join('');
 
-            // Populate Images
+            // Populate Images with customized error styling inside modal grid
             modalImages.innerHTML = project.images.map(img => 
-                `<div class="rounded-xl overflow-hidden shadow-sm bg-white mb-4 cursor-zoom-in group relative" onclick="openImageLightbox('${img}')">
-                    <img src="${img}" alt="Detail" class="w-full h-auto object-cover group-hover:opacity-90 transition-opacity"
-                    onerror="this.onerror=null; this.parentNode.innerHTML='<div class=&quot;flex items-center justify-center p-8 text-neutral-400 bg-neutral-50 text-sm text-center&quot;>Gambar <b>${img}</b> tidak ditemukan.</div>'">
+                `<div class="rounded-xl overflow-hidden shadow-sm bg-white mb-4 cursor-zoom-in group relative border border-neutral-200" onclick="openImageLightbox('${img}')">
+                    <img src="${img}" alt="Detail" class="w-full h-auto object-cover group-hover:opacity-95 transition-opacity"
+                    onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=60';">
                     <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                         <div class="bg-black/50 text-white p-2 rounded-full backdrop-blur-sm">
-                            <i data-lucide="maximize-2" class="w-6 h-6"></i>
+                         <div class="bg-black/50 text-white p-2.5 rounded-full backdrop-blur-sm shadow">
+                            <i data-lucide="maximize-2" class="w-5 h-5"></i>
                          </div>
                     </div>
                  </div>`
             ).join('');
             
             // Handle Link Button
-            if (project.link) {
+            if (project.link && project.link !== "#") {
                 modalLinkContainer.classList.remove('hidden');
                 modalLink.href = project.link;
             } else {
@@ -468,16 +579,16 @@
 
             // Show Modal
             modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; 
-            lucide.createIcons(); 
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            lucide.createIcons(); // Re-init icons for modal elements
         }
 
         function closeModal() {
             modal.classList.add('hidden');
-            document.body.style.overflow = 'auto'; 
+            document.body.style.overflow = 'auto'; // Restore scrolling
         }
 
-        // Lightbox Functions
+        // Lightbox Elements
         const imageLightbox = document.getElementById('image-lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
 
@@ -486,13 +597,14 @@
             imageLightbox.classList.remove('hidden');
         }
 
+        // Close Lightbox
         function closeImageLightbox() {
             imageLightbox.classList.add('hidden');
-            lightboxImg.src = ''; 
+            lightboxImg.src = ''; // Clear src
         }
 
-        // Initialize Icons
-        lucide.createIcons();
+        // Render awal projects
+        renderProjects();
     </script>
 </body>
 </html>
