@@ -467,7 +467,7 @@
         setUserQuery('');
         setIsTyping(true);
 
-        const apiKey = AQ.Ab8RN6Iz6heXS_Wjd4pNGWFYVJBr5axs3FsYZaRgmRI5emLDww";
+        const apiKey = "AQ.Ab8RN6Iz6heXS_Wjd4pNGWFYVJBr5axs3FsYZaRgmRI5emLDww";
         const systemPrompt = `
           Anda adalah "Yudika AI Assistant" — asisten pribadi virtual dari Yudika, seorang Junior Desainer Grafis, ilustrator, dan desainer UI/UX berbakat yang tinggal di Jakarta. Yudika memiliki standar kualitas pengerjaan website & aset visual sekelas profesional, namun jujur mengenai statusnya sebagai desainer junior.
           
@@ -609,7 +609,7 @@
             <div className="absolute inset-0 bg-gradient-to-b from-blue-600/5 to-transparent blur-3xl -z-10" />
             <div className="max-w-4xl mx-auto text-center space-y-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800 text-xs font-semibold text-blue-400">
-                <Icon name="sparkles" className="animate-pulse w-4 h-4" />
+                <Icon name="sparkles" className="animate-pulse w-3.5 h-3.5" />
                 <span>Junior Desainer Grafis & UI/UX</span>
               </div>
               
@@ -621,22 +621,22 @@
                 Saya adalah desainer junior dengan komitmen kualitas tinggi. Bagi saya, desain harus memecahkan masalah secara fungsional tanpa melupakan keindahan visual. Siap membantu UMKM dan perorangan dengan harga terjangkau yang dinegosiasikan langsung sampai deal!
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
                 <a 
                   href="#projects" 
-                  className="px-6 py-3 sm:px-8 sm:py-4 bg-white text-zinc-950 font-bold rounded-xl hover:bg-zinc-200 transition text-center flex items-center justify-center gap-2 group shadow-lg whitespace-nowrap text-sm sm:text-base w-full sm:w-auto"
+                  className="px-8 py-4 bg-white text-zinc-950 font-bold rounded-xl hover:bg-zinc-200 transition text-center flex items-center justify-center gap-2 group shadow-lg"
                 >
-                  <span>Lihat Karya Saya</span>
-                  <Icon name="arrowUpRight" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition w-5 h-5 shrink-0" />
+                  Lihat Karya Saya
+                  <Icon name="arrowUpRight" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition w-4.5 h-4.5" />
                 </a>
                 <a 
                   href="https://wa.me/6289503141919"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 sm:px-8 sm:py-4 bg-zinc-900 text-zinc-200 border border-zinc-800 font-semibold rounded-xl hover:bg-zinc-800 transition text-center flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base w-full sm:w-auto"
+                  className="px-8 py-4 bg-zinc-900 text-zinc-200 border border-zinc-800 font-semibold rounded-xl hover:bg-zinc-800 transition text-center flex items-center justify-center gap-2"
                 >
-                  <Icon name="messageSquare" className="text-blue-500 w-5 h-5 shrink-0" />
-                  <span>Hubungi Saya</span>
+                  <Icon name="messageSquare" className="text-blue-500 w-4.5 h-4.5" />
+                  Hubungi Saya
                 </a>
               </div>
 
@@ -929,7 +929,7 @@
                       onClick={copyEmail}
                       className="px-6 py-3 bg-zinc-900 text-zinc-300 font-semibold rounded-xl border border-zinc-800 hover:bg-zinc-800 hover:text-white transition flex items-center gap-2.5 text-xs select-none cursor-pointer"
                     >
-                      <Icon name="copy" className={emailCopied ? "text-emerald-400 animate-bounce w-4 h-4" : "text-zinc-400 w-4 h-4"} />
+                      <Icon name="copy" className={emailCopied ? "text-emerald-400 animate-bounce w-3.5 h-3.5" : "text-zinc-400 w-3.5 h-3.5"} />
                       {emailCopied ? 'Email Disalin!' : 'Salin Email Kontak'}
                     </button>
                     <a 
@@ -938,7 +938,7 @@
                       rel="noopener noreferrer"
                       className="px-6 py-3 bg-white text-zinc-950 font-bold rounded-xl hover:bg-zinc-200 transition text-xs flex items-center gap-2"
                     >
-                      <Icon name="fileText" className="w-4 h-4" />
+                      <Icon name="fileText" className="w-3.5 h-3.5" />
                       Hubungi Saya
                     </a>
                   </div>
@@ -1097,7 +1097,7 @@
                         className="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition"
                         onError={(e) => {
                           e.target.onerror = null;
-                          e.target.src = project.fallbackImage;
+                          e.target.src = selectedProject.fallbackImage;
                         }}
                       />
                       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
