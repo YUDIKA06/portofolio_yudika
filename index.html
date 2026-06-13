@@ -519,7 +519,7 @@
           } catch (err) {
             retries--;
             if (retries === 0) {
-              replyText = "Maaf, sistem asisten AI sedang sibuk. Namun, Anda dapat menghubungi Yudika langsung melalui WhatsApp di +62 895-0314-1919 atau kirim email ke yudika3304@gmail.com untuk bernegosiasi tarif mulai dari 100rb - 1jt rupiah. Yudika siap membalas pesan Anda segera!";
+              replyText = "Maaf, sistem asisten AI sedang sibuk. Namun, Anda dapat menghubungi Yudika langsung melalui WhatsApp di +62 895-0314-1919 atau kirim email ke yudika3304@gmail.com untuk bernegosiasi. Yudika siap membalas pesan Anda segera!";
             } else {
               await new Promise(resolve => setTimeout(resolve, delay));
               delay *= 2;
@@ -627,7 +627,7 @@
                   className="px-8 py-4 bg-white text-zinc-950 font-bold rounded-xl hover:bg-zinc-200 transition text-center flex items-center justify-center gap-2 group shadow-lg"
                 >
                   Lihat Karya Saya
-                  <Icon name="arrowUpRight" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition w-4.5 h-4.5" />
+                  <Icon name="arrowUpRight" className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition w-5 h-5" />
                 </a>
                 <a 
                   href="https://wa.me/6289503141919"
@@ -635,7 +635,7 @@
                   rel="noopener noreferrer"
                   className="px-8 py-4 bg-zinc-900 text-zinc-200 border border-zinc-800 font-semibold rounded-xl hover:bg-zinc-800 transition text-center flex items-center justify-center gap-2"
                 >
-                  <Icon name="messageSquare" className="text-blue-500 w-4.5 h-4.5" />
+                  <Icon name="messageSquare" className="text-blue-500 w-5 h-5" />
                   Hubungi Saya
                 </a>
               </div>
