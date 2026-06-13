@@ -445,19 +445,41 @@
         setTimeout(() => setEmailCopied(false), 2500);
       };
 
-      const handleFormChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-      };
-
-      const handleFormSubmit = (e) => {
+const handleFormSubmit = (e) => {
         e.preventDefault();
+
+        // 1. Tetap munculkan pop-up sukses warna hijau di UI kamu
         setFormSubmitted(true);
+
+        // 2. Format teks biar rapi pas masuk ke WhatsApp
+        const nomorWA = "6289503141919"; // Nomor WA kamu
+        
+        // Pemetaan kategori agar yang tertulis di WA teksnya rapi
+        const kategoriTeks = {
+          uiux: "UI/UX Design App (Dashboard, SaaS, Mobile)",
+          branding: "Graphic Design & Brand Identity (Visual, Packaging)",
+          combination: "Kombinasi Spesial (Grafis + UI/UX Lengkap)",
+          consultancy: "Sesi Tinjauan Portofolio / Konsultasi"
+        }[formData.category] || formData.category;
+
+        const teksPesan = encodeURIComponent(
+          `Halo Yudika, saya ingin mengajak kerja sama!\n\n` +
+          `*Nama Lengkap:* ${formData.name}\n` +
+          `*Alamat Email:* ${formData.email}\n` +
+          `*Kategori:* ${kategoriTeks}\n\n` +
+          `*Rencana Proyek:*\n${formData.message}`
+        );
+
+        // 3. Jeda 1.2 detik (biar user sempat lihat pop-up sukses hijau kamu dulu), baru oper ke WA
         setTimeout(() => {
+          window.open(`https://wa.me/${nomorWA}?text=${teksPesan}`, '_blank');
+          
+          // Reset status pop-up dan kosongkan form kembali
           setFormSubmitted(false);
           setFormData({ name: '', email: '', category: 'uiux', message: '' });
-        }, 5000);
+        }, 1200);
       };
-
+      
       const handleSendMessage = async (e) => {
         e.preventDefault();
         if (!userQuery.trim()) return;
