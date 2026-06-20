@@ -64,11 +64,11 @@ const PROJECTS = [
     category: "branding",
     tag: "Case Study - SME Support",
     year: "2025",
-    image: "Flexscent-Tumbnail.jpeg",
+    image: "/Flexscent-Tumbnail.jpeg",
     images: [
-      "Flexscent-Tumbnail.jpeg", 
-      "banner-flexscent-biasa.png", 
-      "banner-flexscent-rollup.png"
+      "/Flexscent-Tumbnail.jpeg", 
+      "/banner-flexscent-biasa.png", 
+      "/banner-flexscent-rollup.png"
     ],
     description: "Perancangan identitas visual promosi fisik (Spanduk & X-Banner) berdaya tarik tinggi dan informatif untuk bisnis parfum decant original.",
     role: "Junior Graphic Designer",
@@ -93,7 +93,7 @@ const PROJECTS = [
     year: "2026",
     image: "puro-feed.jpg",
     images: [
-      "puro-feed.jpg", 
+      "/puro-feed.jpg", 
       "campaign1.png", 
       "campaign2.png", 
       "campaign3.png", 
