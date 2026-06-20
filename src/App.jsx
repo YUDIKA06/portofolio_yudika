@@ -492,7 +492,7 @@ export default function App() {
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
-            Halo, Saya Yudika. Portofolio Estetik Sekelas <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400">Profesional</span> Dengan Tarif <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-blue-500">Bersahabat.</span>
+            Halo, Saya Yudika.
           </h1>
 
           <p className="text-zinc-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
