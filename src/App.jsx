@@ -35,12 +35,12 @@ const PROJECTS = [
     year: "2026",
     image: "UIUX DKonek.png",
     images: [
-      "UIUX DKonek2.png", 
-      "UIUX DKonek inventory.png", 
-      "UIUX DKonek Notifikasi.png", 
-      "UIUX DKonek Finance.png", 
-      "UIUX DKonek Profile.png", 
-      "UIUX DKonek.png"
+      "UIUX-DKonek2.png", 
+      "UIUX-DKonek inventory.png", 
+      "UIUX-DKonek Notifikasi.png", 
+      "UIUX-DKonek Finance.png", 
+      "UIUX-DKonek Profile.png", 
+      "UIUX-DKonek.png"
     ],
     description: "Aplikasi dashboard SaaS omnichannel terpusat bagi online seller skala UMKM untuk memetakan produk secara real-time lintas platform marketplace.",
     role: "Junior UI/UX Designer (Arsitektur Informasi & High-Fidelity UI)",
@@ -64,11 +64,11 @@ const PROJECTS = [
     category: "branding",
     tag: "Case Study - SME Support",
     year: "2025",
-    image: "https://i.ibb.co/gY7hJkL/Flexscent Tumbnail.jpeg",
+    image: "Flexscent-Tumbnail.jpeg",
     images: [
-      "https://i.ibb.co/abcd123/Flexscent Tumbnail.jpeg", 
-      "https://i.ibb.co/abcd123/banner flexscent biasa.png", 
-      "https://i.ibb.co/abcd123/banner flexscent rollup.png"
+      "Flexscent-Tumbnail.jpeg", 
+      "banner-flexscent-biasa.png", 
+      "banner-flexscent-rollup.png"
     ],
     description: "Perancangan identitas visual promosi fisik (Spanduk & X-Banner) berdaya tarik tinggi dan informatif untuk bisnis parfum decant original.",
     role: "Junior Graphic Designer",
