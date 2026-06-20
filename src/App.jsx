@@ -34,7 +34,6 @@ const PROJECTS = [
     tag: "Proyek Kompetisi / Lomba UI/UX",
     year: "2026",
     image: "UIUX DKonek.png",
-    fallbackImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
     images: [
       "UIUX DKonek2.png", 
       "UIUX DKonek inventory.png", 
@@ -66,7 +65,6 @@ const PROJECTS = [
     tag: "Case Study - SME Support",
     year: "2025",
     image: "Flexscent Tumbnail.jpeg",
-    fallbackImage: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80",
     images: [
       "Flexscent Tumbnail.jpeg", 
       "banner flexscent biasa.png", 
@@ -94,7 +92,6 @@ const PROJECTS = [
     tag: "Case Study - Rebranding",
     year: "2026",
     image: "puro-feed.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80",
     images: [
       "puro-feed.jpg", 
       "campaign1.png", 
@@ -124,7 +121,6 @@ const PROJECTS = [
     tag: "Concept / Dummy Project",
     year: "2025",
     image: "klinik1.png",
-    fallbackImage: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80",
     images: [
       "klinik1.png", 
       "klinik2.png", 
@@ -152,7 +148,6 @@ const PROJECTS = [
     tag: "Tugas Kuliah - College Project",
     year: "2025",
     image: "rga1.png",
-    fallbackImage: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80",
     images: [
       "rga1.png", 
       "rga2.png"
@@ -179,7 +174,6 @@ const PROJECTS = [
     tag: "Case Study - Beauty Identity",
     year: "2026",
     image: "serum.png",
-    fallbackImage: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=800&q=80",
     images: [
       "serum.png", 
       "serum2.png"
@@ -206,7 +200,6 @@ const PROJECTS = [
     tag: "Case Study - Commercial Art",
     year: "2026",
     image: "porsche.png",
-    fallbackImage: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80",
     images: [
       "porsche.png", 
       "jaguar.png", 
@@ -237,7 +230,6 @@ const PROJECTS = [
     tag: "Concept / Dummy Project",
     year: "2025",
     image: "UIUX Delivery Food.png",
-    fallbackImage: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80",
     images: [
       "UIUX Delivery Food.png"
     ],
