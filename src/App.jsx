@@ -64,7 +64,7 @@ const PROJECTS = [
     category: "branding",
     tag: "Case Study - SME Support",
     year: "2025",
-    image: "https://i.ibb.co/abcd123/Flexscent Tumbnail.jpeg",
+    image: "https://i.ibb.co/gY7hJkL/Flexscent Tumbnail.jpeg",
     images: [
       "https://i.ibb.co/abcd123/Flexscent Tumbnail.jpeg", 
       "https://i.ibb.co/abcd123/banner flexscent biasa.png", 
